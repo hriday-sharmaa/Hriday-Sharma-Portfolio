@@ -1,59 +1,56 @@
 /**
- * SKILLS & TECHNICAL COMPETENCIES DATA
- * ------------------------------------
+ * TECHNICAL SKILLS & COMPETENCIES (ORGANIZED BENTO GRID)
+ * -------------------------------------------------------
  */
 
 export const skillsCategories = [
   {
     id: "languages",
-    name: "Languages",
+    name: "Programming Languages",
     icon: "code",
-    description: "Core programming languages used for algorithmic problem solving and development.",
+    description: "Core languages used for data structures, algorithmic problem solving, and software engineering.",
     skills: [
-      { name: "C++", level: 85, badge: "Primary DSA", experience: "DSA & Problem Solving", icon: "cpp" },
-      { name: "C", level: 80, badge: "Low-level", experience: "Pointers, Memory, Fundamentals", icon: "c" },
-      { name: "JavaScript (ES6+)", level: 88, badge: "Web Core", experience: "Modern Async/DOM, ES Modules", icon: "javascript" },
-      { name: "Python", level: 82, badge: "Scripting", experience: "Data Manipulation, Automation", icon: "python" },
-      { name: "HTML5 / CSS3", level: 90, badge: "Semantic", experience: "Responsive Layouts, Glassmorphism", icon: "html5" }
-    ]
-  },
-  {
-    id: "fundamentals",
-    name: "CS Fundamentals",
-    icon: "cpu",
-    description: "Core academic and computer science theory studied at JECRC University.",
-    skills: [
-      { name: "Data Structures", level: 86, badge: "Core", experience: "Arrays, Linked Lists, Trees, Stacks, Heaps", icon: "dsa" },
-      { name: "Algorithms", level: 84, badge: "Core", experience: "Sorting, Searching, Greedy, Recursion", icon: "algo" },
-      { name: "OOP (Object-Oriented)", level: 85, badge: "Design", experience: "Polymorphism, Inheritance, Encapsulation", icon: "oop" },
-      { name: "Time & Space Complexity", level: 88, badge: "Analysis", experience: "Big-O, Recurrence Relations, Optimization", icon: "bigo" },
-      { name: "Discrete Mathematics", level: 78, badge: "Theory", experience: "Set Theory, Graph Theory, Combinatorics", icon: "math" }
+      { name: "C / C++", level: 88, badge: "Primary DSA", experience: "Pointers, Memory, STL, Algorithmic Optimization", icon: "cpp" },
+      { name: "Python", level: 84, badge: "Scripting & AI", experience: "Data Manipulation, Automation, AI Integrations", icon: "python" },
+      { name: "JavaScript (ES6+)", level: 86, badge: "Modern Web", experience: "Async/Await, DOM APIs, Canvas, ES Modules", icon: "javascript" },
+      { name: "HTML5 & CSS3", level: 90, badge: "Semantic UI", experience: "Responsive Layouts, Glassmorphism, CSS Grid", icon: "html5" }
     ]
   },
   {
     id: "web",
-    name: "Web Engineering",
+    name: "Web Development",
     icon: "globe",
-    description: "Technologies used to craft performant, high-aesthetic web interfaces.",
+    description: "Modern frameworks and styling tools used to build performant, responsive web applications.",
     skills: [
-      { name: "Responsive Design", level: 92, badge: "UI/UX", experience: "Mobile-first, CSS Grid, Flexbox", icon: "responsive" },
-      { name: "DOM & Canvas API", level: 84, badge: "Graphics", experience: "Dynamic Rendering, 60fps Animations", icon: "canvas" },
-      { name: "REST APIs & Fetch", level: 85, badge: "Networking", experience: "JSON, Async/Await, Error Handling", icon: "api" },
-      { name: "Tailwind / Modern CSS", level: 88, badge: "Styling", experience: "Custom Variables, Design Tokens", icon: "tailwind" },
-      { name: "State & Storage", level: 86, badge: "Data", experience: "LocalStorage, Session, Event-driven architecture", icon: "storage" }
+      { name: "Tailwind CSS", level: 90, badge: "Styling", experience: "Utility-first Design, Custom Variables, Modern Grids", icon: "tailwind" },
+      { name: "React / Next.js Basics", level: 80, badge: "Framework", experience: "Component Lifecycle, State & Hooks, Routing Concepts", icon: "react" },
+      { name: "Responsive & Mobile-First", level: 92, badge: "UI/UX", experience: "Fluid Typography, Media Queries, Touch Ergonomics", icon: "responsive" },
+      { name: "DOM & Canvas APIs", level: 85, badge: "Graphics", experience: "Real-time 60 FPS Canvas loops, Dynamic Rendering", icon: "canvas" },
+      { name: "REST APIs & Fetch", level: 85, badge: "Networking", experience: "Async Data Fetching, JSON Parsing, Error Handling", icon: "api" }
     ]
   },
   {
     id: "tools",
-    name: "Tools & Workflow",
+    name: "Tools & Environment",
     icon: "tool",
-    description: "Version control and developer tools used daily in production.",
+    description: "Developer tooling, version control, and environments used daily in development workflows.",
     skills: [
-      { name: "Git & GitHub", level: 88, badge: "VCS", experience: "Branching, PRs, Open-Source Flow", icon: "git" },
-      { name: "VS Code", level: 92, badge: "IDE", experience: "Extensions, Debugging, Customization", icon: "vscode" },
-      { name: "Linux / Bash", level: 75, badge: "CLI", experience: "Shell navigation, scripting, file management", icon: "terminal" },
-      { name: "Postman", level: 80, badge: "Testing", experience: "API endpoint testing & validation", icon: "postman" },
-      { name: "Chrome DevTools", level: 88, badge: "Profiling", experience: "Performance audit, Network, DOM inspector", icon: "devtools" }
+      { name: "Git & GitHub", level: 88, badge: "VCS", experience: "Branching, Pull Requests, Commit Workflows, CI/CD basics", icon: "git" },
+      { name: "VS Code", level: 92, badge: "IDE", experience: "Debugging, Extensions, Workspace Configuration", icon: "vscode" },
+      { name: "Linux / Bash Basics", level: 78, badge: "CLI", experience: "Shell navigation, command scripting, file permissions", icon: "terminal" },
+      { name: "Chrome DevTools", level: 88, badge: "Profiling", experience: "Network inspection, performance audits, DOM debugging", icon: "devtools" }
+    ]
+  },
+  {
+    id: "interests",
+    name: "Exploration & Interests",
+    icon: "cpu",
+    description: "Cutting-edge emerging technologies, artificial intelligence, and foundational principles.",
+    skills: [
+      { name: "Generative AI & LLMs", level: 82, badge: "Emerging", experience: "Prompt Engineering, LLM API Integrations, AI Workflows", icon: "ai" },
+      { name: "Data Structures & Algos", level: 86, badge: "Foundations", experience: "Arrays, Linked Lists, Trees, Stacks, Searching, Sorting", icon: "dsa" },
+      { name: "System Design Concepts", level: 75, badge: "Architecture", experience: "Client-Server Models, Caching, Scalability Basics", icon: "sys" },
+      { name: "Discrete Mathematics", level: 80, badge: "Theory", experience: "Graph Theory, Combinatorics, Logic & Set Theory", icon: "math" }
     ]
   }
 ];

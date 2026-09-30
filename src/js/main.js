@@ -1,9 +1,9 @@
 /**
  * MAIN CLIENT APPLICATION ENTRY POINT
- * Inspired by Jishnu Mondal & Elite "Design Flex" Developer Portfolios
+ * Hriday Sharma Portfolio
  */
 
-import { personalInfo, featuredProjects, marqueeTech } from '../data/portfolioData.js';
+import { siteConfig, featuredProjects, achievementsData, marqueeTech } from '../data/portfolioData.js';
 import { skillsCategories } from '../data/skills.js';
 import { educationData, timelineMilestones } from '../data/education.js';
 
@@ -18,15 +18,15 @@ import { initBentoWidgets } from './bento-widgets.js';
 import { sound } from './interactive-sound.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Initialize core configuration and hydrate DOM
+  // 1. Hydrate DOM from single source of truth
   initConfigLoader();
 
-  // 2. Initialize interactive canvas, cursor & themes
+  // 2. Interactive visual canvas & cursor
   initParticleCanvas();
   initTheme();
   initCustomCursor();
 
-  // 3. Initialize terminal, contact & bento widgets
+  // 3. Recruiter utilities: Terminal, Contact & Bento
   initTerminal();
   initProjectModal();
   initContact();
@@ -38,8 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProjects('all');
   renderSkills('languages');
   renderEducation();
+  renderAchievements();
 
-  // 5. Setup UI Controls & Listeners
+  // 5. Setup UI Handlers
   setupNavigation();
   setupAudioToggle();
   setupScrollProgress();
@@ -56,9 +57,9 @@ function renderHeroTypewriter() {
 
   const roles = [
     "1st Year B.Tech CSE Undergrad",
-    "Data Structures & C++ Solver",
-    "Creative Web & Systems Engineer",
-    "Open-Source & Hackathon Builder",
+    "DSA & C++ Problem Solver",
+    "Full-Stack Web & Systems Builder",
+    "Generative AI & LLM Explorer",
     "JECRC University Scholar"
   ];
 
@@ -73,11 +74,11 @@ function renderHeroTypewriter() {
     if (isDeleting) {
       typingEl.textContent = current.substring(0, charIdx - 1);
       charIdx--;
-      delay = 45;
+      delay = 40;
     } else {
       typingEl.textContent = current.substring(0, charIdx + 1);
       charIdx++;
-      delay = 85;
+      delay = 80;
     }
 
     if (!isDeleting && charIdx === current.length) {
@@ -102,7 +103,6 @@ function renderMarquee() {
   const marqueeTrack = document.getElementById('bento-marquee-track');
   if (!marqueeTrack) return;
 
-  // Duplicate for seamless infinite scroll
   const items = [...marqueeTech, ...marqueeTech];
   marqueeTrack.innerHTML = items.map(tech => `
     <span class="marquee-chip">${tech}</span>
@@ -110,78 +110,83 @@ function renderMarquee() {
 }
 
 /* ==========================================================================
-   Project Render & Filtering (Design Flex 01, 02, 03, 04)
+   Project Render (01, 02, 03, 04)
    ========================================================================== */
 function getProjectMockupSvg(id) {
   if (id === 'algoverse') {
     return `
       <svg class="mockup-art" viewBox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="360" height="200" rx="12" fill="#070c14"/>
-        <!-- Sorting Bars -->
-        <rect x="30" y="110" width="20" height="60" rx="4" fill="#00f0ff" fill-opacity="0.8"/>
-        <rect x="58" y="70" width="20" height="100" rx="4" fill="#7000ff" fill-opacity="0.9"/>
-        <rect x="86" y="130" width="20" height="40" rx="4" fill="#00f0ff" fill-opacity="0.6"/>
+        <rect x="30" y="110" width="20" height="60" rx="4" fill="#06b6d4" fill-opacity="0.8"/>
+        <rect x="58" y="70" width="20" height="100" rx="4" fill="#6366f1" fill-opacity="0.9"/>
+        <rect x="86" y="130" width="20" height="40" rx="4" fill="#06b6d4" fill-opacity="0.6"/>
         <rect x="114" y="40" width="20" height="130" rx="4" fill="#a855f7"/>
-        <rect x="142" y="90" width="20" height="80" rx="4" fill="#00f0ff" fill-opacity="0.85"/>
-        <rect x="170" y="120" width="20" height="50" rx="4" fill="#00f0ff" fill-opacity="0.7"/>
-        <rect x="198" y="55" width="20" height="115" rx="4" fill="#d946ef"/>
-        <rect x="226" y="80" width="20" height="90" rx="4" fill="#00f0ff" fill-opacity="0.9"/>
-        <rect x="254" y="140" width="20" height="30" rx="4" fill="#00f0ff" fill-opacity="0.5"/>
-        <rect x="282" y="65" width="20" height="105" rx="4" fill="#7000ff"/>
-        <rect x="310" y="95" width="20" height="75" rx="4" fill="#00f0ff" fill-opacity="0.8"/>
-        <!-- Graph Line -->
-        <path d="M40 110 L68 70 L96 130 L124 40 L152 90 L180 120 L208 55 L236 80 L264 140 L292 65 L320 95" stroke="#00f0ff" stroke-width="2.5" stroke-dasharray="4 4"/>
-        <circle cx="124" cy="40" r="5" fill="#00f0ff"/>
-        <circle cx="208" cy="55" r="5" fill="#a855f7"/>
+        <rect x="142" y="90" width="20" height="80" rx="4" fill="#06b6d4" fill-opacity="0.85"/>
+        <rect x="170" y="120" width="20" height="50" rx="4" fill="#06b6d4" fill-opacity="0.7"/>
+        <rect x="198" y="55" width="20" height="115" rx="4" fill="#6366f1"/>
+        <rect x="226" y="80" width="20" height="90" rx="4" fill="#06b6d4" fill-opacity="0.9"/>
+        <rect x="254" y="140" width="20" height="30" rx="4" fill="#06b6d4" fill-opacity="0.5"/>
+        <rect x="282" y="65" width="20" height="105" rx="4" fill="#10b981"/>
+        <rect x="310" y="95" width="20" height="75" rx="4" fill="#06b6d4" fill-opacity="0.8"/>
+        <path d="M40 110 L68 70 L96 130 L124 40 L152 90 L180 120 L208 55 L236 80 L264 140 L292 65 L320 95" stroke="#06b6d4" stroke-width="2.5" stroke-dasharray="4 4"/>
+        <circle cx="124" cy="40" r="5" fill="#06b6d4"/>
+        <circle cx="208" cy="55" r="5" fill="#6366f1"/>
       </svg>
     `;
   } else if (id === 'campuspulse') {
     return `
       <svg class="mockup-art" viewBox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="360" height="200" rx="12" fill="#0c101c"/>
-        <!-- Attendance Gauge Ring -->
         <circle cx="100" cy="100" r="55" stroke="rgba(255,255,255,0.08)" stroke-width="10"/>
-        <circle cx="100" cy="100" r="55" stroke="#a855f7" stroke-width="10" stroke-dasharray="345" stroke-dashoffset="62" stroke-linecap="round"/>
+        <circle cx="100" cy="100" r="55" stroke="#6366f1" stroke-width="10" stroke-dasharray="345" stroke-dashoffset="62" stroke-linecap="round"/>
         <text x="100" y="98" fill="#f8fafc" font-size="20" font-weight="bold" text-anchor="middle" font-family="'Space Grotesk', sans-serif">82%</text>
         <text x="100" y="118" fill="#94a3b8" font-size="10" text-anchor="middle" font-family="sans-serif">Attendance</text>
-        <!-- Schedule Cards -->
         <rect x="180" y="45" width="145" height="42" rx="8" fill="#141a2e" stroke="rgba(255,255,255,0.08)"/>
-        <rect x="190" y="55" width="24" height="22" rx="4" fill="#a855f7" fill-opacity="0.3"/>
+        <rect x="190" y="55" width="24" height="22" rx="4" fill="#6366f1" fill-opacity="0.3"/>
         <rect x="222" y="58" width="80" height="8" rx="3" fill="#cbd5e1"/>
         <rect x="222" y="70" width="50" height="6" rx="2" fill="#64748b"/>
-        
         <rect x="180" y="95" width="145" height="42" rx="8" fill="#141a2e" stroke="rgba(255,255,255,0.08)"/>
-        <rect x="190" y="105" width="24" height="22" rx="4" fill="#00f0ff" fill-opacity="0.3"/>
+        <rect x="190" y="105" width="24" height="22" rx="4" fill="#06b6d4" fill-opacity="0.3"/>
         <rect x="222" y="108" width="70" height="8" rx="3" fill="#cbd5e1"/>
         <rect x="222" y="120" width="40" height="6" rx="2" fill="#64748b"/>
       </svg>
     `;
-  } else if (id === 'devsync') {
+  } else if (id === 'neurochat') {
     return `
       <svg class="mockup-art" viewBox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="360" height="200" rx="12" fill="#060910"/>
+        <rect width="360" height="200" rx="12" fill="#080e18"/>
         <!-- Window Bar -->
-        <rect x="0" y="0" width="360" height="30" fill="#0f1524"/>
+        <rect x="0" y="0" width="360" height="30" fill="#0d1624"/>
         <circle cx="20" cy="15" r="4" fill="#ef4444"/>
         <circle cx="34" cy="15" r="4" fill="#eab308"/>
         <circle cx="48" cy="15" r="4" fill="#22c55e"/>
-        <!-- Code Editor Area -->
-        <text x="30" y="65" fill="#00f0ff" font-size="12" font-family="monospace">const <tspan fill="#10b981">sandbox</tspan> = new SandBox();</text>
-        <text x="30" y="90" fill="#a855f7" font-size="12" font-family="monospace">sandbox.<tspan fill="#f8fafc">mount</tspan>({</text>
-        <text x="50" y="115" fill="#94a3b8" font-size="12" font-family="monospace">renderSpeed: <tspan fill="#00f0ff">'60fps'</tspan>,</text>
-        <text x="50" y="140" fill="#94a3b8" font-size="12" font-family="monospace">isolation: <tspan fill="#fbbf24">true</tspan></text>
-        <text x="30" y="165" fill="#a855f7" font-size="12" font-family="monospace">});</text>
-        <rect x="180" y="153" width="8" height="15" fill="#00f0ff" opacity="0.8"/>
+        <rect x="70" y="8" width="110" height="14" rx="4" fill="rgba(16, 185, 129, 0.15)"/>
+        <text x="78" y="19" fill="#10b981" font-size="9" font-family="monospace">🤖 NeuroChat AI Studio</text>
+        <!-- Chat message bubbles -->
+        <rect x="25" y="45" width="210" height="34" rx="8" fill="#141e30" stroke="rgba(255,255,255,0.06)"/>
+        <text x="35" y="66" fill="#e2e8f0" font-size="11" font-family="sans-serif">Explain QuickSort pivot selection in C++</text>
+        <rect x="110" y="90" width="225" height="55" rx="8" fill="#102a24" stroke="rgba(16, 185, 129, 0.3)"/>
+        <text x="122" y="110" fill="#34d399" font-size="11" font-family="monospace">int partition(int arr[], int low, int high) {</text>
+        <text x="135" y="125" fill="#a7f3d0" font-size="10" font-family="monospace">int pivot = arr[high]; // Median of three</text>
+        <text x="122" y="138" fill="#34d399" font-size="11" font-family="monospace">}</text>
+        <!-- Streaming cursor indicator -->
+        <circle cx="178" cy="135" r="3" fill="#10b981"/>
       </svg>
     `;
   } else {
     return `
       <svg class="mockup-art" viewBox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="360" height="200" rx="12" fill="#0b0f1a"/>
-        <circle cx="180" cy="100" r="50" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6 6"/>
-        <rect x="155" y="85" width="50" height="30" rx="6" fill="#f59e0b" fill-opacity="0.2" stroke="#f59e0b" stroke-width="1.5"/>
-        <circle cx="180" cy="78" r="14" stroke="#f59e0b" stroke-width="2"/>
-        <text x="180" y="165" fill="#94a3b8" font-size="11" text-anchor="middle" font-family="monospace">SHA-256 / RSA 2048</text>
+        <rect width="360" height="200" rx="12" fill="#060910"/>
+        <rect x="0" y="0" width="360" height="30" fill="#0f1524"/>
+        <circle cx="20" cy="15" r="4" fill="#ef4444"/>
+        <circle cx="34" cy="15" r="4" fill="#eab308"/>
+        <circle cx="48" cy="15" r="4" fill="#22c55e"/>
+        <text x="30" y="65" fill="#06b6d4" font-size="12" font-family="monospace">const <tspan fill="#10b981">sandbox</tspan> = new SandBox();</text>
+        <text x="30" y="90" fill="#6366f1" font-size="12" font-family="monospace">sandbox.<tspan fill="#f8fafc">mount</tspan>({</text>
+        <text x="50" y="115" fill="#94a3b8" font-size="12" font-family="monospace">renderSpeed: <tspan fill="#06b6d4">'60fps'</tspan>,</text>
+        <text x="50" y="140" fill="#94a3b8" font-size="12" font-family="monospace">isolation: <tspan fill="#fbbf24">true</tspan></text>
+        <text x="30" y="165" fill="#6366f1" font-size="12" font-family="monospace">});</text>
+        <rect x="180" y="153" width="8" height="15" fill="#06b6d4" opacity="0.8"/>
       </svg>
     `;
   }
@@ -240,7 +245,6 @@ function renderProjects(filter = 'all') {
   setupScrollReveal();
 }
 
-// Project category buttons
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     sound.playClick();
@@ -319,7 +323,7 @@ function renderEducation() {
       </p>
 
       <div class="coursework-box">
-        <h4 class="coursework-title">Key Academic Coursework:</h4>
+        <h4 class="coursework-title">Relevant Academic Coursework:</h4>
         <div class="course-chips-wrap">
           ${uni.courses.map(c => `<span class="course-chip">${c}</span>`).join('')}
         </div>
@@ -339,6 +343,36 @@ function renderEducation() {
       </div>
     `).join('');
   }
+}
+
+/* ==========================================================================
+   Achievements & Milestones Renderer
+   ========================================================================== */
+function renderAchievements() {
+  const container = document.getElementById('achievements-grid');
+  if (!container) return;
+
+  container.innerHTML = achievementsData.map(a => `
+    <div class="bento-card reveal-on-scroll" style="grid-column: span 4;">
+      <div class="bento-badge-row">
+        <span class="bento-tag">// ${a.category}</span>
+        <span class="skill-badge" style="background: rgba(16, 185, 129, 0.1); color: var(--accent-emerald); border-color: rgba(16, 185, 129, 0.3);">${a.badge}</span>
+      </div>
+
+      <h3 style="font-family: var(--font-tech); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--text-primary);">${a.title}</h3>
+      <p style="font-size: 0.85rem; color: var(--accent-indigo); margin-bottom: 1rem; font-weight: 600;">${a.subtitle}</p>
+      <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">${a.description}</p>
+
+      <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; margin-top: auto;">
+        ${a.highlights.map(h => `
+          <li style="font-size: 0.84rem; color: var(--text-secondary); display: flex; gap: 0.5rem; align-items: flex-start;">
+            <span style="color: var(--accent-cyan); font-weight: bold;">✦</span>
+            <span>${h}</span>
+          </li>
+        `).join('')}
+      </ul>
+    </div>
+  `).join('');
 }
 
 /* ==========================================================================
