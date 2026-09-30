@@ -9,7 +9,7 @@ export const educationData = [
     location: "Jaipur, Rajasthan, India",
     degree: "Bachelor of Technology (B.Tech)",
     field: "Computer Science & Engineering",
-    period: "2024 - 2028 (Expected)",
+    period: "2024 - 2030 (Expected)",
     status: "Currently in 1st Year",
     badge: "Current Degree",
     description: "Immersed in computer science fundamentals, algorithmic problem solving, computational mathematics, and modern software development practices.",

@@ -34,7 +34,7 @@ export const siteConfig = {
   resumeUrl: "#",
   stats: {
     year: "1st Year",
-    batch: "2024 - 2028",
+    batch: "2024 - 2030",
     primaryLanguages: "C/C++, Python, JavaScript",
     learningFocus: "Data Structures, Web Architecture & Generative AI",
     commitsThisYear: "350+"

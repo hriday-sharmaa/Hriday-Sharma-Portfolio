@@ -61,7 +61,7 @@ First-year Computer Science & Engineering undergraduate at JECRC University. Foc
   <span class="green">Degree:</span> ${personalInfo.role}
   <span class="green">Campus:</span> ${personalInfo.university}
   <span class="green">Coordinates:</span> ${personalInfo.coordinates}
-  <span class="green">Batch:</span> 2024 - 2028
+  <span class="green">Batch:</span> 2024 - 2030
   <span class="green">Core Studies:</span> DSA (C++), OOP, Discrete Math, Computer Architecture & Web Systems
 `,
     hackathons: () => `
