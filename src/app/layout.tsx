@@ -1,33 +1,56 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { Syne, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+  weight: ["400", "500", "600"],
+});
+
+export const viewport: Viewport = {
+  themeColor: "#171717",
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
-  title: "Hriday Sharma | 1st Year B.Tech CSE @ JECRC University",
+  title: "Hriday Sharma — The Digital Journey | Portfolio",
   description:
-    "Official developer portfolio of Hriday Sharma — 1st Year B.Tech Computer Science & Engineering undergraduate at JECRC University, Jaipur. Exploring C++ DSA, Next.js 14, Web Architecture, and Generative AI.",
+    "Personal portfolio of Hriday Sharma — First-year Computer Science Engineering student at JECRC University, exploring programming, C language, computer science fundamentals, and creative technology.",
   keywords: [
     "Hriday Sharma",
     "Hriday Sharma Portfolio",
     "JECRC University",
+    "Computer Science Engineering",
     "B.Tech CSE",
-    "1st Year CSE Undergrad",
-    "Computer Science Portfolio",
-    "C++ Data Structures",
-    "Next.js Developer",
-    "Jaipur Developer",
+    "C Programming",
+    "The Digital Journey",
   ],
   authors: [{ name: "Hriday Sharma", url: "mailto:hridaysharma3264@gmail.com" }],
   creator: "Hriday Sharma",
   openGraph: {
-    title: "Hriday Sharma | 1st Year B.Tech CSE @ JECRC University",
+    title: "Hriday Sharma — The Digital Journey",
     description:
-      "Official portfolio of Hriday Sharma — 1st Year B.Tech CSE Student at JECRC University, Jaipur. Merging algorithmic rigor with modern web architecture.",
+      "First-year Computer Science Engineering student at JECRC University, Jaipur. Exploring programming, technology, and the art of turning ideas into meaningful digital experiences.",
     type: "website",
     locale: "en_US",
     siteName: "Hriday Sharma Portfolio",
-  },
-  icons: {
-    icon: "/favicon.ico",
   },
 };
 
@@ -37,26 +60,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="bg-[#08090d] text-slate-100 antialiased selection:bg-cyan-500 selection:text-black min-h-screen relative font-sans">
-        {/* Ambient cybernetic background glow */}
-        <div className="fixed inset-0 pointer-events-none z-0">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] cyber-radial-glow opacity-60" />
-          <div className="absolute inset-0 cyber-grid opacity-25" />
-          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-indigo-900/10 blur-[130px] rounded-full pointer-events-none" />
-          <div className="absolute top-1/3 left-0 w-[450px] h-[450px] bg-cyan-900/10 blur-[120px] rounded-full pointer-events-none" />
-        </div>
-
-        {/* Foreground Content */}
-        <div className="relative z-10">{children}</div>
+    <html
+      lang="en"
+      className={`dark scroll-smooth ${syne.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable}`}
+    >
+      <body className="bg-[#171717] text-[#F5F3EE] antialiased selection:bg-[#C6F36B] selection:text-[#171717] min-h-screen relative font-sans overflow-x-hidden">
+        {children}
       </body>
     </html>
   );

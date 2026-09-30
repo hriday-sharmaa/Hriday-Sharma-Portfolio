@@ -1,156 +1,136 @@
-# HRIDAY // Hriday Sharma — Production Next.js 14 Developer Portfolio ⚡
+# THE DIGITAL JOURNEY — HRIDAY SHARMA
+### Personal Developer Portfolio & Creative Space
 
-> **Production-grade, highly aesthetic personal developer portfolio** engineered for **Hriday Sharma**, 1st Year B.Tech Computer Science & Engineering undergraduate at **JECRC University, Jaipur, Rajasthan, India**. Built with Next.js 14 App Router, TypeScript, Tailwind CSS, Lucide React, and Framer Motion.
-
----
-
-## 🟢 Core Context & Profile
-
-- **Full Name:** Hriday Sharma
-- **Designation:** 1st Year B.Tech Computer Science & Engineering (CSE) Student
-- **Institution:** JECRC University, Jaipur, Rajasthan, India
-- **Email:** [hridaysharma3264@gmail.com](mailto:hridaysharma3264@gmail.com)
-- **Coordinates:** `26.7753° N, 75.8763° E` (Jaipur, Rajasthan • IST UTC+5:30)
-- **Status Badge:** `🟢 1st-Year CSE @ JECRC | Open to Collaborations & Hackathons`
-- **Target Audience:** Tech recruiters, startup founders, hackathon teams, and engineering peers.
+> *"Curious mind. Building beyond the ordinary."*  
+> **Hriday Sharma** — First-Year Computer Science Engineering Student @ JECRC University, Jaipur
 
 ---
 
-## 🛠️ Technology Stack
+## 🎨 Creative Design Direction
 
-| Layer | Technology | Details |
-|---|---|---|
-| **Framework** | **Next.js 14** | Modern App Router, Server Components & Optimized Client Bundles |
-| **Language** | **TypeScript 5** | Strict type safety across components, props, and telemetry data |
-| **Styling** | **Tailwind CSS** | Dark cyber-industrial design system, glassmorphism, glowing accents |
-| **Icons** | **Lucide React** | Clean, minimalist SVG iconography |
-| **Motion & FX** | **Framer Motion** & **Canvas** | Smooth transitions, 3D tilt perspective, Canvas Confetti |
-| **Sound Engine** | **Web Audio API** | 100% procedural synthesized micro-haptics & ambient focus chords (zero MP3 assets) |
+This portfolio embodies **"THE DIGITAL JOURNEY — HRIDAY SHARMA"**, fusing **premium editorial design**, **futuristic digital aesthetics**, and **minimalist creative developer craftsmanship**.
 
----
-
-## ✨ Architectural & Feature Highlights
-
-1. **Monumental Typographic Hero**:
-   - Ultra-bold `HRIDAY SHARMA` headline with cyan text gradient.
-   - Dynamic terminal typewriter cycling through engineering specializations.
-   - Live status badge: `🟢 1st-Year CSE @ JECRC | Open to Collaborations & Hackathons`.
-   - Direct telemetry counters: 350+ commits, 140+ DSA problems solved, JECRC '28 batch, and Jaipur coordinates.
-
-2. **Interactive Bento Matrix**:
-   - **JECRC Student Hologram ID Card**: 3D interactive mouse perspective tilt, microchip graphics, roll ID, and QR matrix.
-   - **Playable Algorithm Sandbox**: Live sorting benchmark (Bubble Sort & Selection Sort) with step-by-step swaps, comparison counter, and procedural audio pitch feedback.
-   - **GitHub Activity Matrix**: 64-day commit heatmap with activity levels, streak badge, and commit stats.
-   - **Jaipur Live Telemetry & IST Clock**: Real-time ticking 24-hour clock (UTC+5:30) with millisecond telemetry, coordinates, and weather simulation.
-   - **Focus Beat Synthesizer**: In-browser ambient audio generator with spinning vinyl disc and bouncing equalizer frequency bars.
-   - **Infinite Tech Radar Marquee**: Continuous marquee ticker displaying daily active tools and languages.
-
-3. **Featured Software Engineering Projects**:
-   - **Algoverse**: Real-time 60 FPS Algorithm & Graph Visualizer with Big-O HUD.
-   - **CampusPulse**: University utility suite featuring a 75% attendance criteria margin calculator and SGPA curve.
-   - **NeuroChat**: Multi-persona AI conversational studio with streaming token simulation.
-   - **DevSync**: Sandboxed in-browser frontend code playground with virtual dev console.
-   - **Architecture Modal**: Deep inspection of system diagrams, benchmarks, and design decisions.
-
-4. **Categorized Skills Matrix**:
-   - Languages (C/C++ with STL, Python, TypeScript, JavaScript, HTML5/CSS3).
-   - Web & Frameworks (Next.js 14, React 18, Tailwind CSS, Framer Motion, REST APIs).
-   - Developer Tools (Git, GitHub, Linux/Bash, VS Code, Chrome DevTools).
-   - Core Foundations (DSA, Object-Oriented Design, Discrete Math, Generative AI).
-
-5. **Academic Journey & Hackathons**:
-   - JECRC University B.Tech CSE coursework (Data Structures, OOP, Discrete Math, Computer Org).
-   - Senior Secondary Science foundation (PCM + CS).
-   - Campus hackathon drives, speed coding contests, and open-source contributions.
-
-6. **Interactive Developer CLI (Terminal)**:
-   - Full client-side Unix shell emulator with prompt `hriday@jecrc:~$`.
-   - Autocompletion (<kbd>Tab</kbd>), history navigation (<kbd>↑</kbd> / <kbd>↓</kbd>), and commands:
-     `help`, `about`, `skills`, `projects`, `education`, `stats`, `contact`, `matrix`, `sudo hire-hriday`, and `clear`.
-   - Quick one-click execution pills.
-
-7. **Printable Curriculum Vitae Modal**:
-   - ATS-compliant, clean single-sheet resume preview with one-click print (`window.print()`) and copy text features.
-
-8. **Direct Dispatch Contact Hub**:
-   - Interactive collaboration form with topic selector (Summer Internship, Hackathon Invite, Open Source, CS Chat).
-   - One-click copy email button with feedback tooltip (`hridaysharma3264@gmail.com`).
-   - Direct `mailto:` transmission protocol.
+- **Aesthetic Tone:** Sophisticated, Minimal, Creative, Futuristic, Elegant, Clean, Premium, Visually Distinctive
+- **Palette Tokens:**
+  - **Warm Ivory:** `#F5F3EE` — Contrast typography, crisp editorial rules
+  - **Deep Charcoal:** `#171717` — Deep architectural foundation
+  - **Electric Lime:** `#C6F36B` — Tactical high-voltage focal points & status indicators
+  - **Soft Grey:** `#A5A5A5` — Secondary editorial notes & monospace metadata
+- **Typography:** Expressive oversized editorial typography (`Syne`), clean modern sans-serif (`Plus Jakarta Sans`), and precision technical monospace (`JetBrains Mono`).
 
 ---
 
-## 🚀 Getting Started
+## 🧭 Sections & Architecture
 
-### 1. Prerequisites
-- **Node.js** >= 18.17 (Tested on Node.js v24)
-- **npm** or **pnpm** / **yarn**
+1. **Sticky Navigation Bar:**
+   - Left: `HRIDAY.SHARMA` with live pulse dot & year indicator
+   - Right: Smooth anchor links (`Home`, `About`, `Journey`, `Skills`, `Projects`, `Contact`)
+   - Scroll compression: automatically becomes compact on scroll
+   - Mobile: Fullscreen editorial hamburger drawer
 
-### 2. Installation
-```bash
-# Clone the repository
-git clone https://github.com/hriday-sharmaa/Hriday-Sharma-Portfolio.git
-cd "Hriday Sharma Portfolio"
+2. **Hero Section:**
+   - Small top label: `COMPUTER SCIENCE STUDENT / JAIPUR, INDIA`
+   - Expressive oversized headline: `"Curious mind. Building beyond the ordinary."` with `ordinary.` highlighted in Electric Lime
+   - Authentic personal introduction
+   - Two CTA buttons: `[EXPLORE MY WORK]` & `[LET'S CONNECT]`
+   - Original pure CSS 3D polyhedral cube sculpture with orbital rings and coordinate telemetry HUD
+   - Live animated status badge: `CURRENTLY LEARNING C`
+   - Monospace scroll indicator
 
-# Install dependencies
-npm install
-```
+3. **About Me (`More than a student.`):**
+   - Authentic student perspective at JECRC University
+   - Three guiding philosophy pillars: `CURIOSITY-FIRST`, `BUILD TO LEARN`, `CONTINUOUS GROWTH`
+   - Academic metadata badges
 
-### 3. Development Server
-```bash
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. **My Journey (Vertical Timeline):**
+   - Period: `2026 — PRESENT`
+   - Degree: `B.Tech Computer Science Engineering` at `JECRC University`
+   - Exploration domains: C Programming, Computational Logic, Memory Basics, Problem Solving
+   - Extensible structure for future milestones
 
-### 4. Production Build
-```bash
-npm run build
-npm start
+5. **Skills & Exploration (`Learning. Exploring. Growing.`):**
+   - **Card 01 — Programming:** C Language, Currently Learning with authentic C syntax preview
+   - **Card 02 — Foundations:** CS Fundamentals, Problem Solving with memory map architectural preview
+   - **Card 03 — Interests:** Software Development, Web Development, Technology & Innovation
+   - **Zero fake percentages** or exaggerated claims — honest and authentic
+
+6. **Project Showcase (`Ideas into experiences.`):**
+   - Asymmetric cards with bespoke CSS generative previews
+   - **Project 01:** *Personal Portfolio Website* (Completed)
+   - **Project 02:** *Coming Soon* (In Development — C Programming & Algorithmic Logic Hub)
+   - **Project 03:** *Coming Soon* (Conceptualizing — Interactive Web Systems)
+   - Dedicated GitHub & Live Preview action links
+
+7. **Contact Section (`Have an idea? Let's make it happen.`):**
+   - Working `mailto:hridaysharma3264@gmail.com` link
+   - Interactive `Copy Email` button with instant feedback toast
+   - Dedicated GitHub & LinkedIn profile buttons
+   - Direct Dispatch email composer
+
+8. **Minimalist Editorial Footer:**
+   - `HRIDAY SHARMA`
+   - `"Designed with curiosity. Built with passion."`
+   - `2026 © ALL RIGHTS RESERVED.`
+   - Geographic coordinates & Back to Top button
+
+---
+
+## ⚙️ Updating Your Social Links (Quick Guide)
+
+All social URLs and personal data are configured in **one single file**:
+
+👉 `src/config/portfolioConfig.ts`
+
+To update your GitHub or LinkedIn URLs, open `src/config/portfolioConfig.ts` and edit lines 68–80:
+
+```ts
+socials: {
+  email: "hridaysharma3264@gmail.com",
+  github: {
+    label: "GitHub",
+    url: "https://github.com/your-username", // <-- Replace with your GitHub URL
+    handle: "@hridaysharma",
+    isCustom: true,
+  },
+  linkedin: {
+    label: "LinkedIn",
+    url: "https://linkedin.com/in/your-username", // <-- Replace with your LinkedIn URL
+    handle: "Hriday Sharma",
+    isCustom: true,
+  },
+},
 ```
 
 ---
 
-## 📁 Project Structure
+## 🚀 Running Locally
 
-```text
-├── package.json               # Dependencies and scripts (Next.js 14, React 18, Tailwind)
-├── tsconfig.json              # TypeScript configuration with @/* path aliases
-├── tailwind.config.ts         # Cybernetic design system tokens & animations
-├── postcss.config.js          # PostCSS processor configuration
-├── next.config.mjs            # Next.js production settings
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx         # Root layout with metadata and cyber radial glow
-│   │   ├── page.tsx           # Single-page orchestration
-│   │   └── globals.css        # Tailwind directives, glassmorphism, scrollbars
-│   ├── components/
-│   │   ├── Navbar.tsx         # Fixed glass navbar with sound toggle & resume trigger
-│   │   ├── Hero.tsx           # Monumental typography, status pill & typing subtitle
-│   │   ├── BentoGrid.tsx      # Bento grid uniting telemetry, ID card & audio
-│   │   ├── AlgoVisualizerCard.tsx # In-card live sorting benchmark
-│   │   ├── JaipurClockCard.tsx    # Live IST clock & coordinates telemetry
-│   │   ├── AudioSoundscapeCard.tsx# Procedural ambient focus soundscape
-│   │   ├── ProjectsSection.tsx    # Filterable project gallery
-│   │   ├── ProjectModal.tsx       # Architectural blueprint inspection modal
-│   │   ├── SkillsSection.tsx      # Bento skills matrix with progress meters
-│   │   ├── AcademicJourney.tsx    # JECRC coursework & hackathon roadmap
-│   │   ├── TerminalCli.tsx        # Interactive Unix CLI emulator
-│   │   ├── ResumeModal.tsx        # ATS-standard printable resume
-│   │   ├── ContactSection.tsx     # Direct dispatch form & email copy
-│   │   └── Footer.tsx             # Cyberpunk footer & back to top button
-│   ├── data/
-│   │   └── portfolioData.ts   # Centralized typed portfolio & profile data
-│   ├── lib/
-│   │   ├── soundEngine.ts     # Procedural Web Audio API sound synthesizer
-│   │   └── utils.ts           # Tailwind merge & utility helpers
-│   └── types/
-│       └── portfolio.ts       # TypeScript interfaces for all data structures
-```
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+3. **Build for production:**
+   ```bash
+   npm run build
+   ```
 
 ---
 
-## 👤 Author & Contact
+## 🌐 Deploying to Vercel
 
-**Hriday Sharma**  
-1st Year B.Tech Computer Science & Engineering Undergraduate  
-JECRC University, Jaipur, Rajasthan, India  
-Email: [hridaysharma3264@gmail.com](mailto:hridaysharma3264@gmail.com)
+1. Push your repository to GitHub:
+   ```bash
+   git add .
+   git commit -m "feat: complete The Digital Journey portfolio for Hriday Sharma"
+   git push origin main
+   ```
+2. Go to [Vercel](https://vercel.com) and click **"Add New Project"**.
+3. Import your GitHub repository.
+4. Next.js will be auto-detected. Click **Deploy**.

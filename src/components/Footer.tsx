@@ -1,79 +1,87 @@
 "use client";
 
 import React from "react";
-import { personalInfo } from "../data/portfolioData";
-import { soundEngine } from "../lib/soundEngine";
-import { ArrowUp, Heart, Terminal, Sparkles, MapPin } from "lucide-react";
+import { portfolioConfig } from "../config/portfolioConfig";
+import { Github, Linkedin, ArrowUp, Mail } from "lucide-react";
 
 export const Footer: React.FC = () => {
+  const { footer, socials } = portfolioConfig;
+
   const scrollToTop = () => {
-    soundEngine.playClick();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
-    <footer className="relative border-t border-white/[0.08] bg-[#07080c] py-12 text-slate-400 font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/[0.06]">
-          {/* Brand Info */}
-          <div className="text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start gap-2 mb-1">
-              <span className="font-mono font-bold text-white tracking-wider text-sm">
-                {personalInfo.name}
-              </span>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-                1st Year CSE
-              </span>
-            </div>
-            <p className="text-xs text-slate-400 font-mono">
-              JECRC University • Jaipur, Rajasthan, India ({personalInfo.coordinates})
-            </p>
+    <footer className="bg-[#141414] border-t border-[#F5F3EE]/10 py-16 text-[#A5A5A5] font-mono text-xs">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
+        {/* Top Tier: Name & Back to Top */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-8 border-b border-[#F5F3EE]/8">
+          <div>
+            <span className="text-xl sm:text-2xl font-display font-extrabold text-[#F5F3EE] tracking-widest uppercase block">
+              {footer.title}
+            </span>
+            <span className="text-xs text-[#C6F36B] tracking-wider mt-1 block">
+              &ldquo;{footer.tagline}&rdquo;
+            </span>
           </div>
 
-          {/* Quick Links */}
-          <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-mono text-slate-300">
-            <a href="#about" className="hover:text-cyan-400 transition-colors">
-              About
-            </a>
-            <a href="#bento" className="hover:text-cyan-400 transition-colors">
-              Identity
-            </a>
-            <a href="#projects" className="hover:text-cyan-400 transition-colors">
-              Projects
-            </a>
-            <a href="#skills" className="hover:text-cyan-400 transition-colors">
-              Skills
-            </a>
-            <a href="#academics" className="hover:text-cyan-400 transition-colors">
-              Academics
-            </a>
-            <a href="#terminal" className="hover:text-cyan-400 transition-colors">
-              CLI
-            </a>
-            <a href="#contact" className="hover:text-cyan-400 transition-colors">
-              Contact
-            </a>
-          </div>
-
-          {/* Back to top */}
+          {/* Back to Top Button */}
           <button
             onClick={scrollToTop}
-            className="p-2.5 rounded-xl bg-surface-card border border-white/[0.08] text-slate-400 hover:text-cyan-400 hover:border-cyan-500/30 transition-all flex items-center gap-1.5 text-xs font-mono"
-            title="Return to top"
+            aria-label="Back to top"
+            className="group inline-flex items-center gap-2 px-4 py-2 border border-[#F5F3EE]/15 text-[#F5F3EE] hover:border-[#C6F36B] hover:text-[#C6F36B] transition-colors"
           >
-            <span>Top</span>
-            <ArrowUp className="w-3.5 h-3.5" />
+            <span>BACK TO TOP</span>
+            <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" />
           </button>
         </div>
 
-        {/* Bottom Credits & Telemetry */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
-          <div>
-            © {new Date().getFullYear()} {personalInfo.name}. All rights reserved.
+        {/* Bottom Tier: Copyright, Coordinates & Social Icons */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 text-[11px]">
+          <div className="flex items-center gap-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C6F36B]" />
+            <span>{footer.copyright}</span>
           </div>
 
-          <div className="flex items-center gap-2 text-slate-400">
-            <span>Built with Next.js 14 App Router, TypeScript & Tailwind CSS</span>
+          <div className="text-[#A5A5A5]/60 text-center sm:text-left">
+            {footer.locationStamp}
+          </div>
+
+          {/* Social Icons with Tooltips */}
+          <div className="flex items-center gap-4">
+            <a
+              href={socials.github.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub profile"
+              className="p-2 border border-[#F5F3EE]/10 text-[#F5F3EE] hover:text-[#C6F36B] hover:border-[#C6F36B] transition-colors"
+              title="GitHub"
+            >
+              <Github className="w-4 h-4" />
+            </a>
+
+            <a
+              href={socials.linkedin.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              className="p-2 border border-[#F5F3EE]/10 text-[#F5F3EE] hover:text-[#C6F36B] hover:border-[#C6F36B] transition-colors"
+              title="LinkedIn"
+            >
+              <Linkedin className="w-4 h-4" />
+            </a>
+
+            <a
+              href={`mailto:${socials.email}`}
+              aria-label="Send email"
+              className="p-2 border border-[#F5F3EE]/10 text-[#F5F3EE] hover:text-[#C6F36B] hover:border-[#C6F36B] transition-colors"
+              title="Email"
+            >
+              <Mail className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </div>

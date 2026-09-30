@@ -1,55 +1,37 @@
 {
   "personal": {
     "name": "Hriday Sharma",
-    "heroDisplay": "HRIDAY",
-    "headline": "B.Tech Computer Science & Engineering (1st Year) | Aspiring Software Engineer & AI Enthusiast",
-    "title": "B.Tech Computer Science & Engineering (1st Year) | Aspiring Software Engineer & AI Enthusiast",
-    "role": "B.Tech Computer Science & Engineering (1st Year) | Aspiring Software Engineer & AI Enthusiast",
-    "shortRole": "1st Year B.Tech CSE",
-    "subHeadline": "Aspiring Software Engineer & AI Enthusiast",
-    "institution": "JECRC University, Jaipur, Rajasthan, India",
-    "university": "JECRC University, Jaipur, Rajasthan, India",
-    "college": "JECRC University, Jaipur, Rajasthan, India",
-    "degree": "B.Tech Computer Science & Engineering (1st Year)",
-    "batch": "2024 - 2030",
-    "email": "hridaysharma3264@gmail.com",
+    "headline": "Hi, I'm Hriday Sharma",
+    "subtitle": "Aspiring Software Engineer | B.Tech CSE @ JECRC University (Class of 2030)",
+    "shortBio": "1st-year Computer Science undergraduate passionate about building high-performance software, exploring algorithms, and crafting modern digital experiences.",
+    "degree": "Bachelor of Technology (B.Tech)",
+    "branch": "Computer Science & Engineering (CSE)",
+    "currentYear": "1st Year Undergrad",
+    "college": "JECRC University",
+    "institution": "JECRC University",
     "location": "Jaipur, Rajasthan, India",
-    "coordinates": "26.775352° N, 75.876276° E° N, 75.7873° E",
-    "timezone": "Asia/Kolkata",
-    "statusBadge": "🟢 1st-Year CSE @ JECRC | Open to Collaborations & Open Source",
-    "status": "🟢 1st-Year CSE @ JECRC | Open to Collaborations & Open Source"
+    "expectedGraduation": "2030",
+    "email": "hridaysharma3264@gmail.com",
+    "statusBadge": "1st Year B.Tech CSE Undergrad",
+    "availabilityBadge": "Open to Collaborations & Internships"
   },
   "socials": {
     "github": {
-      "url": "https://github.com/[YOUR_USERNAME]",
       "label": "GitHub",
-      "placeholder": true,
-      "notice": "Coming soon (Handle pending)"
+      "url": "#",
+      "handle": "hridaysharma",
+      "placeholder": true
     },
     "linkedin": {
-      "url": "https://linkedin.com/in/[YOUR_USERNAME]",
       "label": "LinkedIn",
-      "placeholder": true,
-      "notice": "Coming soon (Handle pending)"
+      "url": "#",
+      "handle": "Hriday Sharma",
+      "placeholder": true
     },
-    "twitter": {
-      "url": "https://twitter.com/[YOUR_USERNAME]",
-      "label": "Twitter / X",
-      "placeholder": true,
-      "notice": "Coming soon"
-    },
-    "leetcode": {
-      "url": "https://leetcode.com/[YOUR_USERNAME]",
-      "label": "LeetCode",
-      "placeholder": true,
-      "notice": "Coming soon"
+    "email": {
+      "label": "Email",
+      "url": "mailto:hridaysharma3264@gmail.com",
+      "address": "hridaysharma3264@gmail.com"
     }
-  },
-  "stats": {
-    "year": "1st Year",
-    "batch": "2024 - 2030",
-    "primaryLanguages": "C/C++, Python, JavaScript",
-    "learningFocus": "Data Structures, Web Architecture & Generative AI",
-    "commitsThisYear": "350+"
   }
 }

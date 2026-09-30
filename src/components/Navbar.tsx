@@ -1,216 +1,183 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { personalInfo } from "../data/portfolioData";
-import { soundEngine } from "../lib/soundEngine";
-import {
-  Volume2,
-  VolumeX,
-  FileText,
-  Copy,
-  Check,
-  Menu,
-  X,
-  Sparkles,
-  Terminal,
-} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { portfolioConfig } from "../config/portfolioConfig";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
-interface NavbarProps {
-  onOpenResume: () => void;
-}
+const NAV_ITEMS = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Journey", href: "#journey" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
+export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
-  const [copiedEmail, setCopiedEmail] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    setIsMuted(soundEngine.getMuted());
-    const unsub = soundEngine.subscribeMute((muted) => setIsMuted(muted));
-
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 40);
+
+      // Section scroll tracking
+      const sections = NAV_ITEMS.map((item) => item.href.substring(1));
+      const scrollPos = window.scrollY + 200;
+
+      for (const section of sections) {
+        const el = document.getElementById(section);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      unsub();
-      window.removeEventListener("scroll", handleScroll);
-    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleSoundToggle = () => {
-    soundEngine.playClick();
-    soundEngine.toggleMute();
-  };
-
-  const handleCopyEmail = () => {
-    soundEngine.playClick();
-    navigator.clipboard.writeText(personalInfo.email);
-    setCopiedEmail(true);
-    setTimeout(() => setCopiedEmail(false), 2200);
-  };
-
-  const navLinks = [
-    { label: "About", href: "#about" },
-    { label: "Identity", href: "#bento" },
-    { label: "Projects", href: "#projects" },
-    { label: "Skills", href: "#skills" },
-    { label: "Academics", href: "#academics" },
-    { label: "Terminal", href: "#terminal" },
-    { label: "Contact", href: "#contact" },
-  ];
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [mobileMenuOpen]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-[#08090d]/85 backdrop-blur-md border-b border-white/[0.08] shadow-lg shadow-black/40 py-3"
-          : "bg-transparent py-5"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Monogram / Brand */}
-        <a
-          href="#"
-          onMouseEnter={() => soundEngine.playHover()}
-          onClick={() => soundEngine.playClick()}
-          className="flex items-center gap-3 group"
-        >
-          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/20 to-indigo-500/20 border border-cyan-500/30 flex items-center justify-center font-mono font-bold text-cyan-400 text-sm group-hover:border-cyan-400 transition-colors shadow-sm shadow-cyan-500/10">
-            HS
-          </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-sm tracking-wide text-slate-100 group-hover:text-cyan-400 transition-colors">
-                HRIDAY SHARMA
-              </span>
-              <span className="hidden sm:inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-mono font-medium bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                1st Year CSE
-              </span>
-            </div>
-            <span className="block text-[11px] font-mono text-slate-400">
-              JECRC University • Jaipur
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? "py-3 bg-[#171717]/85 backdrop-blur-md border-b border-[#F5F3EE]/8 shadow-lg shadow-black/30"
+            : "py-6 bg-transparent"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
+          {/* Brand Logo / Monogram */}
+          <a
+            href="#home"
+            className="group flex items-center gap-2.5 font-mono text-sm tracking-wider uppercase text-[#F5F3EE] hover:text-[#C6F36B] transition-colors"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C6F36B] opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C6F36B]" />
             </span>
-          </div>
-        </a>
+            <span className="font-semibold text-base tracking-widest">
+              {portfolioConfig.personal.brandTitle}
+            </span>
+            <span className="hidden sm:inline text-[10px] font-mono text-[#A5A5A5] pl-2 border-l border-[#F5F3EE]/15">
+              CSE // 2026
+            </span>
+          </a>
 
-        {/* Desktop Nav Links */}
-        <nav className="hidden lg:flex items-center gap-1 p-1 bg-surface-card/60 backdrop-blur-md border border-white/[0.06] rounded-full">
-          {navLinks.map((link) => (
+          {/* Desktop Navigation Links */}
+          <nav className="hidden md:flex items-center gap-1.5 lg:gap-2 bg-[#171717]/60 border border-[#F5F3EE]/10 rounded-full px-4 py-1.5 backdrop-blur-sm">
+            {NAV_ITEMS.map((item) => {
+              const isActive = activeSection === item.href.substring(1);
+              return (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className={`relative px-3.5 py-1.5 text-xs font-mono tracking-wider transition-colors duration-200 rounded-full ${
+                    isActive
+                      ? "text-[#171717] font-semibold bg-[#C6F36B]"
+                      : "text-[#A5A5A5] hover:text-[#F5F3EE]"
+                  }`}
+                >
+                  {item.label}
+                </a>
+              );
+            })}
+          </nav>
+
+          {/* Desktop Right CTA / Quick Status */}
+          <div className="hidden md:flex items-center gap-4">
             <a
-              key={link.label}
-              href={link.href}
-              onMouseEnter={() => soundEngine.playHover()}
-              onClick={() => soundEngine.playClick()}
-              className="px-3.5 py-1.5 rounded-full text-xs font-medium text-slate-300 hover:text-cyan-400 hover:bg-white/[0.04] transition-all"
+              href="#contact"
+              className="group inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-[#F5F3EE] hover:text-[#C6F36B] transition-colors py-2 px-3 border border-[#F5F3EE]/15 hover:border-[#C6F36B]/60"
             >
-              {link.label}
+              <span>Connect</span>
+              <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
-          ))}
-        </nav>
-
-        {/* Right Action Utilities */}
-        <div className="flex items-center gap-2 sm:gap-3">
-          {/* Sound Synthesizer Toggle */}
-          <button
-            onClick={handleSoundToggle}
-            title={isMuted ? "Sound FX: Muted (Click to enable)" : "Sound FX: Active (Click to mute)"}
-            className={`p-2 rounded-lg border transition-all ${
-              isMuted
-                ? "bg-surface-card/60 border-white/[0.08] text-slate-400 hover:text-slate-200"
-                : "bg-cyan-500/10 border-cyan-500/30 text-cyan-400 shadow-sm shadow-cyan-500/20"
-            }`}
-          >
-            {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
-          </button>
-
-          {/* Quick Copy Email */}
-          <button
-            onClick={handleCopyEmail}
-            title="Copy email: hridaysharma3264@gmail.com"
-            className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-card/70 border border-white/[0.08] text-xs font-mono text-slate-300 hover:text-cyan-300 hover:border-cyan-500/30 transition-all"
-          >
-            {copiedEmail ? (
-              <>
-                <Check className="w-3.5 h-3.5 text-emerald-400" />
-                <span className="text-emerald-400">Copied!</span>
-              </>
-            ) : (
-              <>
-                <Copy className="w-3.5 h-3.5 text-slate-400" />
-                <span>Copy Email</span>
-              </>
-            )}
-          </button>
-
-          {/* View Resume Button */}
-          <button
-            onClick={() => {
-              soundEngine.playClick();
-              onOpenResume();
-            }}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-cyan-500/15 to-indigo-500/15 hover:from-cyan-500/25 hover:to-indigo-500/25 border border-cyan-500/30 text-cyan-300 text-xs font-medium transition-all shadow-sm shadow-cyan-500/10 hover:shadow-cyan-500/20 active:scale-95"
-          >
-            <FileText className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Resume</span>
-          </button>
-
-          {/* Mobile Menu Toggle */}
-          <button
-            onClick={() => {
-              soundEngine.playClick();
-              setMobileMenuOpen(!mobileMenuOpen);
-            }}
-            className="lg:hidden p-2 rounded-lg bg-surface-card/60 border border-white/[0.08] text-slate-300 hover:text-cyan-400"
-          >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Drawer */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden mt-2 mx-4 p-4 rounded-2xl glass-panel border border-white/[0.1] shadow-2xl animate-in fade-in slide-in-from-top-4 duration-200">
-          <div className="flex flex-col gap-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={() => {
-                  soundEngine.playClick();
-                  setMobileMenuOpen(false);
-                }}
-                className="px-4 py-2.5 rounded-lg text-sm font-medium text-slate-200 hover:text-cyan-400 hover:bg-white/[0.05] transition-all"
-              >
-                {link.label}
-              </a>
-            ))}
-            <div className="pt-2 border-t border-white/[0.08] flex items-center justify-between gap-2">
-              <button
-                onClick={handleCopyEmail}
-                className="flex-1 py-2 px-3 rounded-lg bg-surface-card border border-white/[0.08] text-xs font-mono text-slate-300 flex items-center justify-center gap-1.5"
-              >
-                {copiedEmail ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-                {copiedEmail ? "Email Copied!" : "Copy Email"}
-              </button>
-              <button
-                onClick={() => {
-                  soundEngine.playClick();
-                  setMobileMenuOpen(false);
-                  onOpenResume();
-                }}
-                className="flex-1 py-2 px-3 rounded-lg bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 text-xs font-medium flex items-center justify-center gap-1.5"
-              >
-                <FileText className="w-3.5 h-3.5" />
-                Resume CV
-              </button>
-            </div>
           </div>
+
+          {/* Mobile Hamburger Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle navigation menu"
+            className="md:hidden p-2 text-[#F5F3EE] hover:text-[#C6F36B] transition-colors border border-[#F5F3EE]/15 rounded-sm"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
-      )}
-    </header>
+      </header>
+
+      {/* Mobile Drawer Menu */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-40 bg-[#171717] pt-28 pb-10 px-8 flex flex-col justify-between md:hidden"
+          >
+            <div className="space-y-6">
+              <div className="text-[11px] font-mono uppercase text-[#A5A5A5] tracking-widest border-b border-[#F5F3EE]/10 pb-2">
+                INDEX // NAVIGATION
+              </div>
+              <ul className="space-y-4">
+                {NAV_ITEMS.map((item, idx) => (
+                  <motion.li
+                    key={item.label}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.05 }}
+                  >
+                    <a
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="group flex items-center justify-between text-2xl font-display font-bold uppercase tracking-tight text-[#F5F3EE] hover:text-[#C6F36B] transition-colors py-1"
+                    >
+                      <span>{item.label}</span>
+                      <span className="font-mono text-xs text-[#A5A5A5] group-hover:text-[#C6F36B]">
+                        0{idx + 1}
+                      </span>
+                    </a>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="space-y-4 pt-6 border-t border-[#F5F3EE]/10">
+              <div className="text-[10px] font-mono text-[#A5A5A5] uppercase tracking-wider">
+                HRIDAY SHARMA // JECRC UNIVERSITY
+              </div>
+              <div className="flex gap-4">
+                <a
+                  href={`mailto:${portfolioConfig.socials.email}`}
+                  className="text-xs font-mono text-[#C6F36B] hover:underline"
+                >
+                  {portfolioConfig.socials.email}
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };

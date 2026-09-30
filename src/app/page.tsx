@@ -1,57 +1,58 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
 import { Navbar } from "../components/Navbar";
 import { Hero } from "../components/Hero";
-import { BentoGrid } from "../components/BentoGrid";
-import { ProjectsSection } from "../components/ProjectsSection";
+import { AboutSection } from "../components/AboutSection";
+import { JourneySection } from "../components/JourneySection";
 import { SkillsSection } from "../components/SkillsSection";
-import { AcademicJourney } from "../components/AcademicJourney";
-import { TerminalCli } from "../components/TerminalCli";
+import { ProjectsSection } from "../components/ProjectsSection";
 import { ContactSection } from "../components/ContactSection";
 import { Footer } from "../components/Footer";
-import { ResumeModal } from "../components/ResumeModal";
 
 export default function Home() {
-  const [isResumeOpen, setIsResumeOpen] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   return (
-    <div className="min-h-screen bg-[#08090d] text-slate-100 flex flex-col justify-between selection:bg-cyan-500 selection:text-black">
-      {/* Fixed Navigation Bar */}
-      <Navbar onOpenResume={() => setIsResumeOpen(true)} />
+    <div className="min-h-screen bg-[#171717] text-[#F5F3EE] relative selection:bg-[#C6F36B] selection:text-[#171717]">
+      {/* Top Hairline Scroll Progress Indicator */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-[2px] bg-[#C6F36B] origin-left z-50 shadow-[0_0_8px_#C6F36B]"
+        style={{ scaleX }}
+      />
 
-      {/* Main Single-Page Content */}
-      <main className="flex-1 w-full">
-        {/* Hero Presentation */}
+      {/* Sticky Navigation */}
+      <Navbar />
+
+      {/* Main Sections */}
+      <main>
+        {/* 01. Hero Section */}
         <Hero />
 
-        {/* Bento Identity & Live Telemetry Grid */}
-        <BentoGrid />
+        {/* 02. About Section */}
+        <AboutSection />
 
-        {/* Engineering Projects & Architectural Blueprints */}
-        <ProjectsSection />
+        {/* 03. My Journey (Timeline) */}
+        <JourneySection />
 
-        {/* Technical Skills & Competencies Matrix */}
+        {/* 04. Skills & Exploration */}
         <SkillsSection />
 
-        {/* Academic Coursework & Hackathons */}
-        <AcademicJourney />
+        {/* 05. Project Showcase */}
+        <ProjectsSection />
 
-        {/* Interactive CLI Terminal Emulator */}
-        <TerminalCli />
-
-        {/* Direct Contact & Collaboration Hub */}
+        {/* 06. Contact Section */}
         <ContactSection />
       </main>
 
       {/* Footer */}
       <Footer />
-
-      {/* ATS Resume Preview Modal */}
-      <ResumeModal
-        isOpen={isResumeOpen}
-        onClose={() => setIsResumeOpen(false)}
-      />
     </div>
   );
 }

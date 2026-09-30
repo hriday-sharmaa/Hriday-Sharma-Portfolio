@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hriday Sharma — The Digital Journey | Portfolio</title>
+  
+  <meta name="description" content="Personal portfolio of Hriday Sharma — First-year Computer Science Engineering student at JECRC University, exploring programming, C language, computer science fundamentals, and creative technology.">
+  <meta name="author" content="Hriday Sharma">
+  <meta name="theme-color" content="#171717">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hriday Sharma — The Digital Journey">
+  <meta property="og:description" content="First-year Computer Science Engineering student at JECRC University, Jaipur. Exploring programming, technology, and the art of turning ideas into meaningful digital experiences.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23171717'/><circle cx='50' cy='50' r='30' fill='%23C6F36B'/><text x='50%' y='66%' font-size='38' font-weight='900' fill='%23171717' font-family='sans-serif' text-anchor='middle'>HS</text></svg>">
+
+  <!-- Google Fonts: Syne, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            charcoal: '#171717',
+            ivory: '#F5F3EE',
+            lime: '#C6F36B',
+            softgrey: '#A5A5A5',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Styling */
+    html {
+      background-color: #171717;
+      color: #F5F3EE;
+    }
+    ::selection {
+      background: #C6F36B;
+      color: #171717;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #171717;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2a2a2a;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #C6F36B;
+    }
+    .editorial-grid {
+      background-size: 56px 56px;
+      background-image: 
+        linear-gradient(to right, rgba(245, 243, 238, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(245, 243, 238, 0.025) 1px, transparent 1px);
+    }
+    .perspective-container {
+      perspective: 1200px;
+      transform-style: preserve-3d;
+    }
+    .preserve-3d {
+      transform-style: preserve-3d;
+    }
+    @keyframes rotateCubeSlow {
+      0% { transform: rotateX(20deg) rotateY(0deg); }
+      50% { transform: rotateX(25deg) rotateY(180deg); }
+      100% { transform: rotateX(20deg) rotateY(360deg); }
+    }
+    .animate-cube {
+      animation: rotateCubeSlow 28s infinite linear;
+    }
+    @keyframes ringSpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes ringSpinReverse {
+      0% { transform: rotate(360deg); }
+      100% { transform: rotate(0deg); }
+    }
+    .animate-spin-ring {
+      animation: ringSpin 32s linear infinite;
+    }
+    .animate-spin-reverse {
+      animation: ringSpinReverse 40s linear infinite;
+    }
+  </style>
+</head>
+<body class="bg-[#171717] text-[#F5F3EE] antialiased selection:bg-[#C6F36B] selection:text-[#171717] min-h-screen relative font-sans overflow-x-hidden">
+
+  <!-- Top Hairline Scroll Progress Bar -->
+  <div id="scrollProgress" class="fixed top-0 left-0 h-[2px] bg-[#C6F36B] z-50 transition-all duration-75 shadow-[0_0_8px_#C6F36B]" style="width: 0%;"></div>
+
+  <!-- Sticky Editorial Navigation Bar -->
+  <header id="mainNav" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-6 bg-transparent">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#home" class="group flex items-center gap-2.5 font-mono text-sm tracking-wider uppercase text-[#F5F3EE] hover:text-[#C6F36B] transition-colors">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C6F36B] opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-[#C6F36B]"></span>
+        </span>
+        <span class="font-semibold text-base tracking-widest">HRIDAY.SHARMA</span>
+        <span class="hidden sm:inline text-[10px] font-mono text-[#A5A5A5] pl-2 border-l border-[#F5F3EE]/15">CSE // 2026</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center gap-2 bg-[#171717]/60 border border-[#F5F3EE]/10 rounded-full px-4 py-1.5 backdrop-blur-sm">
+        <a href="#home" class="nav-link px-3.5 py-1.5 text-xs font-mono tracking-wider text-[#171717] font-semibold bg-[#C6F36B] rounded-full transition-colors">Home</a>
+        <a href="#about" class="nav-link px-3.5 py-1.5 text-xs font-mono tracking-wider text-[#A5A5A5] hover:text-[#F5F3EE] rounded-full transition-colors">About</a>
+        <a href="#journey" class="nav-link px-3.5 py-1.5 text-xs font-mono tracking-wider text-[#A5A5A5] hover:text-[#F5F3EE] rounded-full transition-colors">Journey</a>
+        <a href="#skills" class="nav-link px-3.5 py-1.5 text-xs font-mono tracking-wider text-[#A5A5A5] hover:text-[#F5F3EE] rounded-full transition-colors">Skills</a>
+        <a href="#projects" class="nav-link px-3.5 py-1.5 text-xs font-mono tracking-wider text-[#A5A5A5] hover:text-[#F5F3EE] rounded-full transition-colors">Projects</a>
+        <a href="#contact" class="nav-link px-3.5 py-1.5 text-xs font-mono tracking-wider text-[#A5A5A5] hover:text-[#F5F3EE] rounded-full transition-colors">Contact</a>
+      </nav>
+
+      <!-- Desktop Connect CTA -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#contact" class="group inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-[#F5F3EE] hover:text-[#C6F36B] transition-colors py-2 px-3.5 border border-[#F5F3EE]/15 hover:border-[#C6F36B]/60">
+          <span>Connect</span>
+          <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17"></path></svg>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" aria-label="Toggle navigation menu" class="md:hidden p-2 text-[#F5F3EE] hover:text-[#C6F36B] transition-colors border border-[#F5F3EE]/15">
+        <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        <svg id="closeIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobileDrawer" class="fixed inset-0 z-30 bg-[#171717] pt-28 pb-10 px-8 flex flex-col justify-between hidden md:hidden">
+    <div class="space-y-6">
+      <div class="text-[11px] font-mono uppercase text-[#A5A5A5] tracking-widest border-b border-[#F5F3EE]/10 pb-2">
+        INDEX // NAVIGATION
+      </div>
+      <ul class="space-y-4">
+        <li><a href="#home" class="mobile-nav-link flex items-center justify-between text-2xl font-display font-bold uppercase text-[#F5F3EE] hover:text-[#C6F36B] transition-colors py-1"><span>Home</span><span class="font-mono text-xs text-[#A5A5A5]">01</span></a></li>
+        <li><a href="#about" class="mobile-nav-link flex items-center justify-between text-2xl font-display font-bold uppercase text-[#F5F3EE] hover:text-[#C6F36B] transition-colors py-1"><span>About</span><span class="font-mono text-xs text-[#A5A5A5]">02</span></a></li>
+        <li><a href="#journey" class="mobile-nav-link flex items-center justify-between text-2xl font-display font-bold uppercase text-[#F5F3EE] hover:text-[#C6F36B] transition-colors py-1"><span>Journey</span><span class="font-mono text-xs text-[#A5A5A5]">03</span></a></li>
+        <li><a href="#skills" class="mobile-nav-link flex items-center justify-between text-2xl font-display font-bold uppercase text-[#F5F3EE] hover:text-[#C6F36B] transition-colors py-1"><span>Skills</span><span class="font-mono text-xs text-[#A5A5A5]">04</span></a></li>
+        <li><a href="#projects" class="mobile-nav-link flex items-center justify-between text-2xl font-display font-bold uppercase text-[#F5F3EE] hover:text-[#C6F36B] transition-colors py-1"><span>Projects</span><span class="font-mono text-xs text-[#A5A5A5]">05</span></a></li>
+        <li><a href="#contact" class="mobile-nav-link flex items-center justify-between text-2xl font-display font-bold uppercase text-[#F5F3EE] hover:text-[#C6F36B] transition-colors py-1"><span>Contact</span><span class="font-mono text-xs text-[#A5A5A5]">06</span></a></li>
+      </ul>
+    </div>
+    <div class="space-y-3 pt-6 border-t border-[#F5F3EE]/10">
+      <div class="text-[10px] font-mono text-[#A5A5A5] uppercase">HRIDAY SHARMA // JECRC UNIVERSITY</div>
+      <a href="mailto:hridaysharma3264@gmail.com" class="text-xs font-mono text-[#C6F36B]">hridaysharma3264@gmail.com</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <!-- 04. HERO SECTION -->
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section id="home" class="relative min-h-[92vh] lg:min-h-screen flex flex-col justify-center pt-28 pb-16 lg:pt-32 lg:pb-24 overflow-hidden border-b border-[#F5F3EE]/8 editorial-grid">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <!-- Left Column -->
+          <div class="lg:col-span-7 flex flex-col items-start space-y-7">
+            <!-- Small Top Label -->
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#171717]/80 border border-[#F5F3EE]/15 text-[11px] sm:text-xs font-mono tracking-widest uppercase text-[#A5A5A5]">
+              <span class="w-1.5 h-1.5 bg-[#C6F36B] rounded-full inline-block"></span>
+              <span>COMPUTER SCIENCE STUDENT / JAIPUR, INDIA</span>
+            </div>
+
+            <!-- Main Headline -->
+            <div class="space-y-1">
+              <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] font-display font-extrabold text-[#F5F3EE] tracking-tight leading-[1.04]">
+                Curious mind.<br>
+                Building beyond<br>
+                the <span class="text-[#C6F36B] relative inline-block underline decoration-[#C6F36B]/30 underline-offset-8">ordinary.</span>
+              </h1>
+            </div>
+
+            <!-- Introduction -->
+            <p class="text-base sm:text-lg text-[#F5F3EE]/80 max-w-2xl font-light leading-relaxed">
+              Hey, I'm Hriday Sharma — a first-year Computer Science Engineering student at JECRC University, exploring programming, technology, and the art of turning ideas into meaningful digital experiences.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 w-full sm:w-auto">
+              <a href="#projects" class="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-[#F5F3EE] text-[#171717] font-mono text-xs uppercase tracking-widest font-semibold hover:bg-[#C6F36B] transition-all duration-300">
+                <span>EXPLORE MY WORK</span>
+                <svg class="w-4 h-4 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+              </a>
+              <a href="#contact" class="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-transparent text-[#F5F3EE] font-mono text-xs uppercase tracking-widest border border-[#F5F3EE]/25 hover:border-[#C6F36B] hover:text-[#C6F36B] transition-all duration-300">
+                <span>LET'S CONNECT</span>
+                <svg class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17"></path></svg>
+              </a>
+            </div>
+
+            <!-- Animated Status Indicator -->
+            <div class="flex items-center gap-3 pt-4 border-t border-[#F5F3EE]/10 w-full max-w-md">
+              <div class="flex items-center gap-2 px-3 py-1 bg-[#171717] border border-[#C6F36B]/30">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C6F36B] opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-[#C6F36B]"></span>
+                </span>
+                <span class="font-mono text-[11px] uppercase tracking-wider text-[#C6F36B] font-medium">CURRENTLY LEARNING C</span>
+              </div>
+              <span class="text-[11px] font-mono text-[#A5A5A5]">// JECRC UNIVERSITY</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Abstract CSS 3D Digital Sculpture -->
+          <div class="lg:col-span-5 flex justify-center lg:justify-end">
+            <div class="relative w-full max-w-[480px] aspect-square mx-auto flex items-center justify-center select-none perspective-container">
+              <!-- Orbit Rings -->
+              <div class="absolute w-[360px] h-[360px] sm:w-[420px] sm:h-[420px] rounded-full border border-dashed border-[#F5F3EE]/15 animate-spin-ring pointer-events-none"></div>
+              <div class="absolute w-[280px] h-[280px] sm:w-[330px] sm:h-[330px] rounded-full border border-[#F5F3EE]/10 animate-spin-reverse pointer-events-none">
+                <div class="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#C6F36B] shadow-[0_0_12px_#C6F36B]"></div>
+              </div>
+              <div class="absolute w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] rounded-full border border-[#C6F36B]/20 pointer-events-none"></div>
+
+              <!-- 3D Cube -->
+              <div class="relative w-44 h-44 sm:w-52 sm:h-52 preserve-3d animate-cube">
+                <!-- Front -->
+                <div class="absolute inset-0 border border-[#F5F3EE]/30 bg-[#171717]/50 backdrop-blur-sm flex flex-col justify-between p-3.5" style="transform: translateZ(88px);">
+                  <div class="flex justify-between items-center text-[10px] font-mono text-[#A5A5A5]"><span>[F_01]</span><span class="text-[#C6F36B]">C_CORE</span></div>
+                  <div class="space-y-1"><div class="w-12 h-1 bg-[#C6F36B]"></div><div class="text-[11px] font-mono text-[#F5F3EE]/90">0x7FFD // LOGIC</div></div>
+                  <div class="flex justify-between items-center text-[9px] font-mono text-[#A5A5A5]"><span>NODE::ACTIVE</span><div class="w-1.5 h-1.5 rounded-full bg-[#C6F36B] animate-ping"></div></div>
+                </div>
+                <!-- Back -->
+                <div class="absolute inset-0 border border-[#F5F3EE]/20 bg-[#171717]/40 flex flex-col justify-between p-3.5" style="transform: rotateY(180deg) translateZ(88px);">
+                  <span class="text-[10px] font-mono text-[#A5A5A5]">[B_02] // JECRC</span>
+                  <div class="text-center font-mono text-[11px] text-[#A5A5A5]">SYS.ARCH</div>
+                  <span class="text-[9px] font-mono text-[#A5A5A5]">2026.01</span>
+                </div>
+                <!-- Right -->
+                <div class="absolute inset-0 border border-[#C6F36B]/30 bg-[#171717]/50 flex flex-col justify-between p-3.5" style="transform: rotateY(90deg) translateZ(88px);">
+                  <span class="text-[10px] font-mono text-[#C6F36B]">01010011</span>
+                  <div class="border border-dashed border-[#F5F3EE]/20 h-10 flex items-center justify-center font-mono text-[10px] text-[#F5F3EE]/80">int main()</div>
+                  <span class="text-[9px] font-mono text-[#A5A5A5]">EXEC_OK</span>
+                </div>
+                <!-- Left -->
+                <div class="absolute inset-0 border border-[#F5F3EE]/20 bg-[#171717]/40 flex flex-col justify-between p-3.5" style="transform: rotateY(-90deg) translateZ(88px);">
+                  <span class="text-[10px] font-mono text-[#A5A5A5]">VECTOR</span>
+                  <div class="space-y-1 font-mono text-[9px] text-[#A5A5A5]"><div>X: +26.9124</div><div>Y: +75.7873</div></div>
+                  <span class="text-[9px] font-mono text-[#C6F36B]">JAIPUR_IN</span>
+                </div>
+                <!-- Top -->
+                <div class="absolute inset-0 border border-[#F5F3EE]/25 bg-[#171717]/60 flex items-center justify-center p-3" style="transform: rotateX(90deg) translateZ(88px);">
+                  <div class="w-16 h-16 border border-dashed border-[#C6F36B]/40 rounded-full flex items-center justify-center">
+                    <div class="w-4 h-4 bg-[#C6F36B]/20 rounded-full border border-[#C6F36B]"></div>
+                  </div>
+                </div>
+                <!-- Bottom -->
+                <div class="absolute inset-0 border border-[#F5F3EE]/15 bg-[#171717]/70" style="transform: rotateX(-90deg) translateZ(88px);"></div>
+              </div>
+
+              <!-- Floating Badges -->
+              <div class="absolute -top-4 right-2 sm:right-6 bg-[#171717]/90 border border-[#F5F3EE]/15 px-3 py-1.5 font-mono text-[10px] text-[#A5A5A5] backdrop-blur-md">
+                <span class="text-[#C6F36B] mr-1.5">●</span>GEO: 26.91°N 75.78°E
+              </div>
+              <div class="absolute -bottom-4 left-2 sm:left-4 bg-[#171717]/90 border border-[#C6F36B]/30 px-3 py-1.5 font-mono text-[10px] text-[#F5F3EE] backdrop-blur-md flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#C6F36B] animate-ping"></span>
+                <span>CSE // YEAR_01</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="pt-16 sm:pt-20 flex items-center justify-between text-[#A5A5A5] text-[11px] font-mono uppercase tracking-widest border-t border-[#F5F3EE]/8 mt-12">
+          <div class="flex items-center gap-2.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#C6F36B]"></span>
+            <span>THE DIGITAL JOURNEY — 2026</span>
+          </div>
+          <a href="#about" class="group flex items-center gap-2 hover:text-[#C6F36B] transition-colors">
+            <span>SCROLL TO EXPLORE</span>
+            <svg class="w-3.5 h-3.5 text-[#C6F36B] animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <!-- 05. ABOUT ME SECTION -->
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section id="about" class="py-24 sm:py-32 border-b border-[#F5F3EE]/8 relative bg-[#171717]">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-12 border-b border-[#F5F3EE]/10">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-widest text-[#C6F36B] block mb-2">01 // DISCOVERY</span>
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-[#F5F3EE] tracking-tight">
+              More than a student.
+            </h2>
+          </div>
+          <span class="font-mono text-xs text-[#A5A5A5] uppercase tracking-widest">AUTHENTIC STORY // 2026</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pt-12 items-start">
+          <!-- Left Column -->
+          <div class="lg:col-span-7 space-y-8">
+            <div class="relative pl-6 border-l-2 border-[#C6F36B]">
+              <p class="text-xl sm:text-2xl lg:text-3xl font-display font-normal text-[#F5F3EE] leading-relaxed tracking-tight">
+                &ldquo;I'm Hriday Sharma, currently pursuing B.Tech in Computer Science Engineering at JECRC University.&rdquo;
+              </p>
+            </div>
+            <p class="text-base sm:text-lg text-[#F5F3EE]/80 leading-relaxed font-light">
+              I'm at the beginning of my journey in technology, building my programming foundation and exploring how ideas transform into real-world digital experiences.
+            </p>
+            <p class="text-base sm:text-lg text-[#F5F3EE]/80 leading-relaxed font-light">
+              I believe in learning by building, staying curious, and continuously improving. Rather than just memorizing syntax, I focus on understanding computational logic and memory principles from the ground up.
+            </p>
+
+            <div class="pt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="p-5 border border-[#F5F3EE]/10 bg-[#171717] hover:border-[#C6F36B]/40 transition-colors">
+                <div class="text-[#C6F36B] mb-2 font-mono text-xs uppercase">ACADEMICS</div>
+                <div class="text-sm font-semibold text-[#F5F3EE]">B.Tech Computer Science Engineering</div>
+                <div class="text-xs text-[#A5A5A5] mt-1">First Year Undergrad • Class of 2030</div>
+              </div>
+              <div class="p-5 border border-[#F5F3EE]/10 bg-[#171717] hover:border-[#C6F36B]/40 transition-colors">
+                <div class="text-[#C6F36B] mb-2 font-mono text-xs uppercase">INSTITUTION</div>
+                <div class="text-sm font-semibold text-[#F5F3EE]">JECRC University</div>
+                <div class="text-xs text-[#A5A5A5] mt-1">Jaipur, Rajasthan, India</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="text-xs font-mono uppercase tracking-widest text-[#A5A5A5] border-b border-[#F5F3EE]/10 pb-3">CORE PHILOSOPHY</div>
+            <div class="space-y-4">
+              <div class="p-6 border border-[#F5F3EE]/10 bg-[#1a1a1a]/40 hover:border-[#C6F36B] transition-all">
+                <div class="font-mono text-xs text-[#C6F36B] font-bold mb-2">[01] CURIOSITY-FIRST</div>
+                <p class="text-sm text-[#A5A5A5] font-light leading-relaxed">Driven by foundational principles and understanding how software behaves at its core.</p>
+              </div>
+              <div class="p-6 border border-[#F5F3EE]/10 bg-[#1a1a1a]/40 hover:border-[#C6F36B] transition-all">
+                <div class="font-mono text-xs text-[#C6F36B] font-bold mb-2">[02] BUILD TO LEARN</div>
+                <p class="text-sm text-[#A5A5A5] font-light leading-relaxed">Turning conceptual knowledge into functional, well-structured software and experiments.</p>
+              </div>
+              <div class="p-6 border border-[#F5F3EE]/10 bg-[#1a1a1a]/40 hover:border-[#C6F36B] transition-all">
+                <div class="font-mono text-xs text-[#C6F36B] font-bold mb-2">[03] CONTINUOUS GROWTH</div>
+                <p class="text-sm text-[#A5A5A5] font-light leading-relaxed">Expanding problem-solving logic and engineering craft every single day.</p>
+              </div>
+            </div>
+            <div class="p-4 border border-dashed border-[#F5F3EE]/15 bg-[#171717] font-mono text-xs text-[#A5A5A5]">
+              <span class="text-[#C6F36B]">$ </span><span>mindset = explore() &amp;&amp; build() &amp;&amp; iterate();</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <!-- 06. MY JOURNEY SECTION (VERTICAL TIMELINE) -->
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section id="journey" class="py-24 sm:py-32 border-b border-[#F5F3EE]/8 relative bg-[#171717] editorial-grid">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-12 border-b border-[#F5F3EE]/10">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-widest text-[#C6F36B] block mb-2">02 // PROGRESSION</span>
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-[#F5F3EE] tracking-tight">
+              My Journey
+            </h2>
+          </div>
+          <div class="font-mono text-xs text-[#A5A5A5] flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-[#C6F36B] animate-pulse"></span>
+            <span>ACTIVE PATH // EXPANDABLE</span>
+          </div>
+        </div>
+
+        <div class="relative pt-16 max-w-4xl">
+          <div class="absolute top-16 bottom-8 left-4 sm:left-8 w-[1px] bg-gradient-to-b from-[#C6F36B] via-[#F5F3EE]/20 to-transparent"></div>
+
+          <div class="space-y-12">
+            <div class="relative pl-12 sm:pl-20 group">
+              <div class="absolute left-4 sm:left-8 -translate-x-1/2 top-1.5 flex items-center justify-center">
+                <div class="w-5 h-5 rounded-full bg-[#171717] border-2 border-[#C6F36B] flex items-center justify-center shadow-[0_0_12px_#C6F36B]">
+                  <div class="w-1.5 h-1.5 rounded-full bg-[#C6F36B]"></div>
+                </div>
+              </div>
+
+              <div class="p-8 sm:p-10 border border-[#F5F3EE]/10 bg-[#1a1a1a]/60 hover:border-[#C6F36B] transition-all">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                  <span class="inline-flex items-center gap-2 font-mono text-xs px-3 py-1 bg-[#C6F36B] text-[#171717] font-bold tracking-wider">
+                    2026 — PRESENT
+                  </span>
+                  <span class="font-mono text-[11px] text-[#A5A5A5]">Jaipur, Rajasthan, India</span>
+                </div>
+
+                <h3 class="text-2xl sm:text-3xl font-display font-bold text-[#F5F3EE] mb-1">
+                  B.Tech Computer Science Engineering
+                </h3>
+                <div class="text-base text-[#C6F36B] font-mono mb-5">JECRC University</div>
+
+                <p class="text-base text-[#F5F3EE]/80 font-light leading-relaxed mb-6">
+                  Currently exploring programming, C language, computer science fundamentals, and problem-solving.
+                </p>
+
+                <div class="space-y-2 pt-4 border-t border-[#F5F3EE]/10">
+                  <div class="text-[10px] font-mono text-[#A5A5A5] uppercase tracking-wider mb-2">CURRENT EXPLORATION DOMAINS:</div>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono text-[#F5F3EE]/90">
+                    <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C6F36B]"></span>Core C Programming &amp; Computational Thinking</div>
+                    <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C6F36B]"></span>Algorithmic Logic &amp; Memory Basics</div>
+                    <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C6F36B]"></span>Computer Science Foundations &amp; Systems</div>
+                    <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C6F36B]"></span>Problem Solving &amp; Logic Implementation</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Future teaser -->
+            <div class="relative pl-12 sm:pl-20">
+              <div class="absolute left-4 sm:left-8 -translate-x-1/2 top-2 flex items-center justify-center">
+                <div class="w-3 h-3 rounded-full bg-[#171717] border border-[#F5F3EE]/30"></div>
+              </div>
+              <div class="p-6 border border-dashed border-[#F5F3EE]/10 bg-transparent flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs font-mono text-[#A5A5A5]">
+                <div>
+                  <span class="text-[#C6F36B] mr-2">// FUTURE CHAPTERS</span>
+                  <span>Projects, open source contributions, and engineering milestones will be logged here.</span>
+                </div>
+                <span class="px-2.5 py-1 border border-[#F5F3EE]/10 uppercase text-[10px]">CLASS OF 2030</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <!-- 07. SKILLS & EXPLORATION SECTION -->
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section id="skills" class="py-24 sm:py-32 border-b border-[#F5F3EE]/8 relative bg-[#171717]">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-12 border-b border-[#F5F3EE]/10">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-widest text-[#C6F36B] block mb-2">03 // EXPLORATION</span>
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-[#F5F3EE] tracking-tight">
+              Learning. Exploring. Growing.
+            </h2>
+          </div>
+          <p class="font-mono text-xs text-[#A5A5A5] max-w-sm">
+            A transparent look into what I am mastering today and the technological domains I am exploring.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-16">
+          <!-- CARD 01 — PROGRAMMING -->
+          <div class="p-8 border border-[#F5F3EE]/12 bg-[#191919] hover:border-[#C6F36B] transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between font-mono text-xs text-[#A5A5A5] mb-6">
+                <span class="text-[#C6F36B] font-bold">[CARD 01]</span>
+                <span class="px-2 py-0.5 border border-[#C6F36B]/40 text-[#C6F36B] text-[10px] tracking-wider uppercase bg-[#C6F36B]/5">ACTIVE LEARNING</span>
+              </div>
+
+              <h3 class="text-xl font-display font-bold text-[#F5F3EE]">PROGRAMMING</h3>
+              <span class="text-xs font-mono text-[#A5A5A5]">Core Language Study</span>
+
+              <div class="space-y-3.5 my-8">
+                <div class="p-3 bg-[#171717] border border-[#F5F3EE]/10 flex items-center justify-between">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#C6F36B]"></span>
+                    <span class="font-mono text-sm text-[#F5F3EE]">C Language</span>
+                  </div>
+                  <span class="text-[10px] font-mono text-[#C6F36B]">PRIMARY</span>
+                </div>
+                <div class="p-3 bg-[#171717] border border-[#F5F3EE]/10 flex items-center justify-between">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#C6F36B] animate-ping"></span>
+                    <span class="font-mono text-sm text-[#F5F3EE]">Currently Learning</span>
+                  </div>
+                  <span class="text-[10px] font-mono text-[#A5A5A5]">DAILY FOCUS</span>
+                </div>
+              </div>
+
+              <div class="p-4 bg-[#121212] border border-[#F5F3EE]/10 font-mono text-xs text-[#A5A5A5] space-y-1">
+                <div class="text-[10px] text-[#A5A5A5]/60 mb-1 border-b border-[#F5F3EE]/5 pb-1 flex justify-between">
+                  <span>// main.c</span><span class="text-[#C6F36B]">gcc -Wall</span>
+                </div>
+                <div><span class="text-[#C6F36B]">#include</span> &lt;stdio.h&gt;</div>
+                <div><span class="text-[#C6F36B]">int</span> main(<span class="text-[#C6F36B]">void</span>) {</div>
+                <div class="pl-4 text-[#F5F3EE]">printf(<span class="text-[#C6F36B]">"Building foundation.\n"</span>);</div>
+                <div class="pl-4"><span class="text-[#C6F36B]">return</span> 0;</div>
+                <div>}</div>
+              </div>
+            </div>
+            <div class="pt-6 mt-6 border-t border-[#F5F3EE]/10 flex items-center justify-between text-xs font-mono text-[#A5A5A5]">
+              <span>SYNTAX &amp; LOGIC</span><span class="text-[#C6F36B]">01 / 03</span>
+            </div>
+          </div>
+
+          <!-- CARD 02 — FOUNDATIONS -->
+          <div class="p-8 border border-[#F5F3EE]/12 bg-[#191919] hover:border-[#C6F36B] transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between font-mono text-xs text-[#A5A5A5] mb-6">
+                <span class="text-[#C6F36B] font-bold">[CARD 02]</span>
+                <span class="px-2 py-0.5 border border-[#F5F3EE]/20 text-[#F5F3EE] text-[10px] tracking-wider uppercase bg-[#F5F3EE]/5">CORE DISCIPLINE</span>
+              </div>
+
+              <h3 class="text-xl font-display font-bold text-[#F5F3EE]">FOUNDATIONS</h3>
+              <span class="text-xs font-mono text-[#A5A5A5]">Engineering Fundamentals</span>
+
+              <div class="space-y-3.5 my-8">
+                <div class="p-3 bg-[#171717] border border-[#F5F3EE]/10 flex items-center justify-between">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#C6F36B]"></span>
+                    <span class="font-mono text-sm text-[#F5F3EE]">Computer Science Fundamentals</span>
+                  </div>
+                  <span class="text-[10px] font-mono text-[#A5A5A5]">CORE</span>
+                </div>
+                <div class="p-3 bg-[#171717] border border-[#F5F3EE]/10 flex items-center justify-between">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#C6F36B]"></span>
+                    <span class="font-mono text-sm text-[#F5F3EE]">Problem Solving</span>
+                  </div>
+                  <span class="text-[10px] font-mono text-[#C6F36B]">ANALYTIC</span>
+                </div>
+              </div>
+
+              <div class="p-4 bg-[#121212] border border-[#F5F3EE]/10 font-mono text-xs text-[#A5A5A5] space-y-2">
+                <div class="text-[10px] text-[#A5A5A5]/60 mb-2 border-b border-[#F5F3EE]/5 pb-1 flex justify-between">
+                  <span>// computational_model</span><span class="text-[#C6F36B]">MEM_MAP</span>
+                </div>
+                <div class="grid grid-cols-4 gap-1.5 text-center text-[10px]">
+                  <div class="p-2 border border-[#C6F36B]/40 text-[#C6F36B] bg-[#C6F36B]/5">STACK</div>
+                  <div class="p-2 border border-[#F5F3EE]/15 text-[#F5F3EE]">HEAP</div>
+                  <div class="p-2 border border-[#F5F3EE]/15 text-[#F5F3EE]">BSS</div>
+                  <div class="p-2 border border-[#F5F3EE]/15 text-[#F5F3EE]">TEXT</div>
+                </div>
+                <div class="text-[10px] text-[#A5A5A5] pt-1 flex justify-between">
+                  <span>LOGIC: FLOW &amp; CONDITIONAL</span><span class="text-[#C6F36B]">O(1)</span>
+                </div>
+              </div>
+            </div>
+            <div class="pt-6 mt-6 border-t border-[#F5F3EE]/10 flex items-center justify-between text-xs font-mono text-[#A5A5A5]">
+              <span>SYSTEMS &amp; CONCEPTS</span><span class="text-[#C6F36B]">02 / 03</span>
+            </div>
+          </div>
+
+          <!-- CARD 03 — INTERESTS -->
+          <div class="p-8 border border-[#F5F3EE]/12 bg-[#191919] hover:border-[#C6F36B] transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between font-mono text-xs text-[#A5A5A5] mb-6">
+                <span class="text-[#C6F36B] font-bold">[CARD 03]</span>
+                <span class="px-2 py-0.5 border border-[#F5F3EE]/20 text-[#A5A5A5] text-[10px] tracking-wider uppercase bg-white/5">FUTURE HORIZONS</span>
+              </div>
+
+              <h3 class="text-xl font-display font-bold text-[#F5F3EE]">INTERESTS</h3>
+              <span class="text-xs font-mono text-[#A5A5A5]">Technological Horizons</span>
+
+              <div class="space-y-3.5 my-8">
+                <div class="p-3 bg-[#171717] border border-[#F5F3EE]/10 flex items-center justify-between">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#C6F36B]"></span>
+                    <span class="font-mono text-sm text-[#F5F3EE]">Software Development</span>
+                  </div>
+                  <span class="text-[10px] font-mono text-[#C6F36B]">EXPANDING</span>
+                </div>
+                <div class="p-3 bg-[#171717] border border-[#F5F3EE]/10 flex items-center justify-between">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#C6F36B]"></span>
+                    <span class="font-mono text-sm text-[#F5F3EE]">Web Development</span>
+                  </div>
+                  <span class="text-[10px] font-mono text-[#A5A5A5]">INTEREST</span>
+                </div>
+                <div class="p-3 bg-[#171717] border border-[#F5F3EE]/10 flex items-center justify-between">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#C6F36B]"></span>
+                    <span class="font-mono text-sm text-[#F5F3EE]">Technology &amp; Innovation</span>
+                  </div>
+                  <span class="text-[10px] font-mono text-[#C6F36B]">PASSION</span>
+                </div>
+              </div>
+
+              <div class="p-4 bg-[#121212] border border-[#F5F3EE]/10 font-mono text-xs text-[#A5A5A5] space-y-1.5">
+                <div class="text-[10px] text-[#A5A5A5]/60 mb-1 border-b border-[#F5F3EE]/5 pb-1 flex justify-between">
+                  <span>// design_engineering</span><span class="text-[#C6F36B]">AESTHETICS</span>
+                </div>
+                <div class="flex items-center justify-between text-[11px] text-[#F5F3EE]">
+                  <span>INTERACTIVE UI</span><span class="text-[#C6F36B]">● ACTIVE</span>
+                </div>
+                <div class="w-full bg-[#171717] h-1.5 rounded-none overflow-hidden">
+                  <div class="bg-[#C6F36B] h-full w-2/3"></div>
+                </div>
+                <div class="text-[9px] text-[#A5A5A5] pt-0.5">Exploring high-craft interfaces &amp; digital product architecture.</div>
+              </div>
+            </div>
+            <div class="pt-6 mt-6 border-t border-[#F5F3EE]/10 flex items-center justify-between text-xs font-mono text-[#A5A5A5]">
+              <span>CRAFT &amp; CREATION</span><span class="text-[#C6F36B]">03 / 03</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <!-- 08. PROJECT SHOWCASE SECTION -->
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section id="projects" class="py-24 sm:py-32 border-b border-[#F5F3EE]/8 relative bg-[#171717] editorial-grid">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-12 border-b border-[#F5F3EE]/10">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-widest text-[#C6F36B] block mb-2">04 // EXPERIMENTS</span>
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-display font-bold text-[#F5F3EE] tracking-tight">
+              Ideas into experiences.
+            </h2>
+          </div>
+          <p class="font-mono text-xs text-[#A5A5A5] max-w-sm">
+            Original digital creations and upcoming experiments crafted with precision.
+          </p>
+        </div>
+
+        <div class="pt-16 space-y-12 sm:space-y-16">
+          <!-- PROJECT 01 -->
+          <article class="group border border-[#F5F3EE]/12 bg-[#191919] hover:border-[#C6F36B] transition-all overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 p-8 sm:p-12 items-center">
+              <div class="lg:col-span-6">
+                <!-- CSS Visual Preview -->
+                <div class="w-full min-h-[220px] bg-[#121212] border border-[#F5F3EE]/10 p-5 flex flex-col justify-between">
+                  <div class="flex items-center justify-between border-b border-[#F5F3EE]/10 pb-3 font-mono text-[10px] text-[#A5A5A5]">
+                    <div class="flex items-center gap-1.5">
+                      <div class="w-2.5 h-2.5 rounded-full bg-[#F5F3EE]/20"></div>
+                      <div class="w-2.5 h-2.5 rounded-full bg-[#F5F3EE]/20"></div>
+                      <div class="w-2.5 h-2.5 rounded-full bg-[#C6F36B]"></div>
+                    </div>
+                    <div class="px-2 py-0.5 bg-[#171717] border border-[#F5F3EE]/10 text-[9px]">hridaysharma.dev // LIVE</div>
+                  </div>
+                  <div class="space-y-3 my-auto py-2">
+                    <div class="text-[10px] font-mono text-[#C6F36B]">// THE DIGITAL JOURNEY</div>
+                    <div class="text-xl sm:text-2xl font-display font-extrabold text-[#F5F3EE] leading-tight">
+                      Curious mind.<br><span class="text-[#C6F36B]">Building beyond.</span>
+                    </div>
+                    <div class="w-24 h-1 bg-[#C6F36B]"></div>
+                  </div>
+                  <div class="flex items-center justify-between text-[10px] font-mono text-[#A5A5A5] pt-2 border-t border-[#F5F3EE]/10">
+                    <span>EDITORIAL ARCHITECTURE</span><span class="text-[#C6F36B]">v2.0_DEPLOYED</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="lg:col-span-6 space-y-6">
+                <div class="flex items-center justify-between font-mono text-xs">
+                  <span class="text-[#C6F36B] font-bold">[01] // PROJECT</span>
+                  <span class="px-2.5 py-1 text-[10px] tracking-wider uppercase border border-[#C6F36B] text-[#C6F36B] bg-[#C6F36B]/5">Completed</span>
+                </div>
+                <div>
+                  <h3 class="text-2xl sm:text-4xl font-display font-bold text-[#F5F3EE] group-hover:text-[#C6F36B] transition-colors">
+                    Personal Portfolio Website
+                  </h3>
+                  <div class="text-xs font-mono text-[#A5A5A5] mt-1 uppercase tracking-wider">Aesthetic Editorial Space</div>
+                </div>
+                <p class="text-base text-[#F5F3EE]/80 font-light leading-relaxed">
+                  My personal digital space to showcase my journey, learning, and creative work.
+                </p>
+                <div class="flex flex-wrap gap-2 pt-2">
+                  <span class="px-2.5 py-1 bg-[#171717] border border-[#F5F3EE]/10 text-xs font-mono text-[#F5F3EE]/90">Next.js</span>
+                  <span class="px-2.5 py-1 bg-[#171717] border border-[#F5F3EE]/10 text-xs font-mono text-[#F5F3EE]/90">React</span>
+                  <span class="px-2.5 py-1 bg-[#171717] border border-[#F5F3EE]/10 text-xs font-mono text-[#F5F3EE]/90">TypeScript</span>
+                  <span class="px-2.5 py-1 bg-[#171717] border border-[#F5F3EE]/10 text-xs font-mono text-[#F5F3EE]/90">Tailwind CSS</span>
+                  <span class="px-2.5 py-1 bg-[#171717] border border-[#F5F3EE]/10 text-xs font-mono text-[#F5F3EE]/90">Framer Motion</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-4 pt-4 border-t border-[#F5F3EE]/10">
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 bg-transparent border border-[#F5F3EE]/20 hover:border-[#C6F36B] hover:text-[#C6F36B] text-[#F5F3EE] font-mono text-xs tracking-wider uppercase transition-colors">
+                    GitHub
+                  </a>
+                  <a href="#home" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#F5F3EE] text-[#171717] font-semibold hover:bg-[#C6F36B] font-mono text-xs tracking-wider uppercase transition-colors">
+                    Live Experience
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 02 -->
+          <article class="group border border-[#F5F3EE]/12 bg-[#191919] hover:border-[#C6F36B] transition-all overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 p-8 sm:p-12 items-center">
+              <div class="lg:col-span-6 lg:order-2">
+                <div class="w-full min-h-[220px] bg-[#0f0f0f] border border-[#F5F3EE]/10 p-5 flex flex-col justify-between">
+                  <div class="flex items-center justify-between border-b border-[#F5F3EE]/10 pb-3 font-mono text-[10px] text-[#A5A5A5]">
+                    <span class="text-[#C6F36B]">c_algorithm_runtime</span><span>DEV_STATUS: 85%</span>
+                  </div>
+                  <div class="font-mono text-xs text-[#A5A5A5] space-y-1.5 py-2">
+                    <div class="text-[#C6F36B] text-[11px]">// Memory allocation &amp; pointer logic</div>
+                    <div class="text-[11px] text-[#F5F3EE]">int *ptr = (int*)malloc(sizeof(int));</div>
+                    <div class="text-[10px] text-[#A5A5A5]">*ptr = 2026; /* JECRC Foundation */</div>
+                    <div class="flex items-center gap-2 pt-2">
+                      <span class="w-2 h-2 rounded-full bg-[#C6F36B] animate-ping"></span>
+                      <span class="text-[10px] text-[#C6F36B]">STATUS: IN DEVELOPMENT</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between text-[10px] font-mono text-[#A5A5A5] pt-2 border-t border-[#F5F3EE]/10">
+                    <span>ALGORITHMIC LOGIC</span><span class="text-[#F5F3EE]">COMING SOON</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="lg:col-span-6 lg:order-1 space-y-6">
+                <div class="flex items-center justify-between font-mono text-xs">
+                  <span class="text-[#C6F36B] font-bold">[02] // PROJECT</span>
+                  <span class="px-2.5 py-1 text-[10px] tracking-wider uppercase border border-[#F5F3EE]/20 text-[#A5A5A5] bg-[#171717]">In Development</span>
+                </div>
+                <div>
+                  <h3 class="text-2xl sm:text-4xl font-display font-bold text-[#F5F3EE] group-hover:text-[#C6F36B] transition-colors">
+                    Coming Soon
+                  </h3>
+                  <div class="text-xs font-mono text-[#A5A5A5] mt-1 uppercase tracking-wider">Algorithmic Logic Hub</div>
+                </div>
+                <p class="text-base text-[#F5F3EE]/80 font-light leading-relaxed">
+                  A new experiment currently taking shape.
+                </p>
+                <div class="flex flex-wrap gap-2 pt-2">
+                  <span class="px-2.5 py-1 bg-[#171717] border border-[#F5F3EE]/10 text-xs font-mono text-[#F5F3EE]/90">C Programming</span>
+                  <span class="px-2.5 py-1 bg-[#171717] border border-[#F5F3EE]/10 text-xs font-mono text-[#F5F3EE]/90">Algorithms</span>
+                  <span class="px-2.5 py-1 bg-[#171717] border border-[#F5F3EE]/10 text-xs font-mono text-[#F5F3EE]/90">Problem Solving</span>
+                  <span class="px-2.5 py-1 bg-[#171717] border border-[#F5F3EE]/10 text-xs font-mono text-[#F5F3EE]/90">Logic</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-4 pt-4 border-t border-[#F5F3EE]/10">
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 bg-transparent border border-[#F5F3EE]/20 hover:border-[#C6F36B] hover:text-[#C6F36B] text-[#F5F3EE] font-mono text-xs tracking-wider uppercase transition-colors">
+                    GitHub
+                  </a>
+                  <span class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#171717] text-[#A5A5A5] border border-[#F5F3EE]/10 font-mono text-xs tracking-wider uppercase">
+                    Preview Soon
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 03 -->
+          <article class="group border border-[#F5F3EE]/12 bg-[#191919] hover:border-[#C6F36B] transition-all overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 p-8 sm:p-12 items-center">
+              <div class="lg:col-span-6">
+                <div class="w-full min-h-[220px] bg-[#121212] border border-[#F5F3EE]/10 p-5 flex flex-col justify-between">
+                  <div class="flex items-center justify-between border-b border-[#F5F3EE]/10 pb-3 font-mono text-[10px] text-[#A5A5A5]">
+                    <span>SYSTEMS_LAB</span><span class="text-[#C6F36B]">CONCEPT</span>
+                  </div>
+                  <div class="relative my-auto py-4 flex items-center justify-center">
+                    <div class="w-32 h-20 border border-dashed border-[#F5F3EE]/20 flex items-center justify-center relative">
+                      <div class="w-12 h-12 border border-[#C6F36B]/50 rounded-full flex items-center justify-center">
+                        <div class="w-2 h-2 bg-[#C6F36B] rounded-full"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between text-[10px] font-mono text-[#A5A5A5] pt-2 border-t border-[#F5F3EE]/10">
+                    <span>FUTURE HORIZONS</span><span class="text-[#C6F36B]">EXPERIMENTING</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="lg:col-span-6 space-y-6">
+                <div class="flex items-center justify-between font-mono text-xs">
+                  <span class="text-[#C6F36B] font-bold">[03] // PROJECT</span>
+                  <span class="px-2.5 py-1 text-[10px] tracking-wider uppercase border border-[#F5F3EE]/20 text-[#A5A5A5] bg-[#171717]">Conceptualizing</span>
+                </div>
+                <div>
+                  <h3 class="text-2xl sm:text-4xl font-display font-bold text-[#F5F3EE] group-hover:text-[#C6F36B] transition-colors">
+                    Coming Soon
+                  </h3>
+                  <div class="text-xs font-mono text-[#A5A5A5] mt-1 uppercase tracking-wider">Interactive Web Systems</div>
+                </div>
+                <p class="text-base text-[#F5F3EE]/80 font-light leading-relaxed">
+                  More ideas, experiments, and digital experiences coming soon.
+                </p>
+                <div class="flex flex-wrap gap-2 pt-2">
+                  <span class="px-2.5 py-1 bg-[#171717] border border-[#F5F3EE]/10 text-xs font-mono text-[#F5F3EE]/90">Software Systems</span>
+                  <span class="px-2.5 py-1 bg-[#171717] border border-[#F5F3EE]/10 text-xs font-mono text-[#F5F3EE]/90">Web Architecture</span>
+                  <span class="px-2.5 py-1 bg-[#171717] border border-[#F5F3EE]/10 text-xs font-mono text-[#F5F3EE]/90">Exploration</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-4 pt-4 border-t border-[#F5F3EE]/10">
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 bg-transparent border border-[#F5F3EE]/20 hover:border-[#C6F36B] hover:text-[#C6F36B] text-[#F5F3EE] font-mono text-xs tracking-wider uppercase transition-colors">
+                    GitHub
+                  </a>
+                  <span class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#171717] text-[#A5A5A5] border border-[#F5F3EE]/10 font-mono text-xs tracking-wider uppercase">
+                    Preview Soon
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <!-- 09. CONTACT SECTION -->
+    <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+    <section id="contact" class="py-24 sm:py-32 border-b border-[#F5F3EE]/8 relative bg-[#171717] editorial-grid">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="pb-12 border-b border-[#F5F3EE]/10 flex items-center justify-between">
+          <span class="font-mono text-xs uppercase tracking-widest text-[#C6F36B]">05 // INITIATE DIALOGUE</span>
+          <span class="font-mono text-xs text-[#A5A5A5] flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-[#C6F36B] animate-pulse"></span>
+            <span>INBOX OPEN // JAIPUR, IN</span>
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pt-16 items-start">
+          <!-- Left Column -->
+          <div class="lg:col-span-7 space-y-8">
+            <div class="space-y-4">
+              <h2 class="text-4xl sm:text-6xl lg:text-7xl font-display font-bold text-[#F5F3EE] tracking-tight leading-[1.05]">
+                Have an idea?<br>
+                <span class="text-[#C6F36B]">Let's make it happen.</span>
+              </h2>
+              <p class="text-base sm:text-lg text-[#F5F3EE]/80 max-w-xl font-light leading-relaxed pt-2">
+                I'm always interested in connecting with fellow learners, developers, and people who love exploring technology.
+              </p>
+            </div>
+
+            <!-- Contact Options -->
+            <div class="space-y-4 pt-4">
+              <!-- EMAIL -->
+              <div class="p-6 border border-[#F5F3EE]/15 bg-[#191919] hover:border-[#C6F36B] transition-all">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div>
+                    <div class="text-[10px] font-mono text-[#A5A5A5] uppercase tracking-wider mb-1">EMAIL CONTACT</div>
+                    <a href="mailto:hridaysharma3264@gmail.com" class="text-base sm:text-lg font-mono text-[#F5F3EE] hover:text-[#C6F36B] transition-colors">
+                      hridaysharma3264@gmail.com
+                    </a>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <a href="mailto:hridaysharma3264@gmail.com" class="px-4 py-2 bg-[#F5F3EE] text-[#171717] font-mono text-xs uppercase font-semibold hover:bg-[#C6F36B] transition-colors">
+                      Send Mail
+                    </a>
+                    <button id="copyEmailBtn" class="p-2 bg-[#171717] border border-[#F5F3EE]/15 text-[#A5A5A5] hover:text-[#F5F3EE] hover:border-[#C6F36B] transition-colors" title="Copy email">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    </button>
+                  </div>
+                </div>
+                <div id="copyToast" class="hidden mt-3 text-xs font-mono text-[#C6F36B] flex items-center gap-1.5">
+                  ✓ Email copied to clipboard!
+                </div>
+              </div>
+
+              <!-- GITHUB & LINKEDIN -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="group p-5 border border-[#F5F3EE]/15 bg-[#191919] hover:border-[#C6F36B] transition-all flex items-center justify-between">
+                  <div>
+                    <div class="text-[10px] font-mono text-[#A5A5A5] uppercase tracking-wider mb-1">CODE REPOSITORIES</div>
+                    <div class="text-sm font-display font-bold text-[#F5F3EE] group-hover:text-[#C6F36B] transition-colors">GitHub Profile</div>
+                  </div>
+                  <svg class="w-4 h-4 text-[#A5A5A5] group-hover:text-[#C6F36B] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17"></path></svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="group p-5 border border-[#F5F3EE]/15 bg-[#191919] hover:border-[#C6F36B] transition-all flex items-center justify-between">
+                  <div>
+                    <div class="text-[10px] font-mono text-[#A5A5A5] uppercase tracking-wider mb-1">PROFESSIONAL NETWORK</div>
+                    <div class="text-sm font-display font-bold text-[#F5F3EE] group-hover:text-[#C6F36B] transition-colors">LinkedIn Profile</div>
+                  </div>
+                  <svg class="w-4 h-4 text-[#A5A5A5] group-hover:text-[#C6F36B] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17"></path></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Dispatch Form -->
+          <div class="lg:col-span-5">
+            <div class="p-8 border border-[#F5F3EE]/15 bg-[#191919]">
+              <div class="flex items-center justify-between border-b border-[#F5F3EE]/10 pb-4 mb-6">
+                <span class="text-xs font-mono text-[#F5F3EE]">DIRECT DISPATCH</span>
+                <span class="text-[10px] font-mono text-[#A5A5A5]">CLIENT // MAILTO</span>
+              </div>
+              <form id="contactForm" class="space-y-4">
+                <div>
+                  <label class="block text-[11px] font-mono text-[#A5A5A5] uppercase tracking-wider mb-1.5">Your Name</label>
+                  <input type="text" id="formName" required placeholder="e.g. Alex Morgan" class="w-full bg-[#171717] border border-[#F5F3EE]/15 focus:border-[#C6F36B] text-sm text-[#F5F3EE] px-4 py-2.5 outline-none font-mono placeholder:text-[#A5A5A5]/40 transition-colors">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-mono text-[#A5A5A5] uppercase tracking-wider mb-1.5">Subject / Topic</label>
+                  <input type="text" id="formSubject" required placeholder="e.g. Tech collaboration" class="w-full bg-[#171717] border border-[#F5F3EE]/15 focus:border-[#C6F36B] text-sm text-[#F5F3EE] px-4 py-2.5 outline-none font-mono placeholder:text-[#A5A5A5]/40 transition-colors">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-mono text-[#A5A5A5] uppercase tracking-wider mb-1.5">Message</label>
+                  <textarea id="formMessage" rows="4" required placeholder="Write a message..." class="w-full bg-[#171717] border border-[#F5F3EE]/15 focus:border-[#C6F36B] text-sm text-[#F5F3EE] px-4 py-2.5 outline-none font-sans placeholder:text-[#A5A5A5]/40 resize-none transition-colors"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3.5 bg-[#C6F36B] text-[#171717] font-mono text-xs uppercase font-bold tracking-widest flex items-center justify-center gap-2 hover:bg-[#d4fc7e] transition-colors">
+                  <span>Send Message</span>
+                </button>
+                <p class="text-[10px] font-mono text-[#A5A5A5] text-center pt-2">
+                  Directly prepares your mail application to contact hridaysharma3264@gmail.com
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <!-- 10. FOOTER -->
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <footer class="bg-[#141414] border-t border-[#F5F3EE]/10 py-16 text-[#A5A5A5] font-mono text-xs">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-12">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-8 border-b border-[#F5F3EE]/8">
+        <div>
+          <span class="text-xl sm:text-2xl font-display font-extrabold text-[#F5F3EE] tracking-widest uppercase block">
+            HRIDAY SHARMA
+          </span>
+          <span class="text-xs text-[#C6F36B] tracking-wider mt-1 block">
+            &ldquo;Designed with curiosity. Built with passion.&rdquo;
+          </span>
+        </div>
+        <button id="backToTopBtn" aria-label="Back to top" class="group inline-flex items-center gap-2 px-4 py-2 border border-[#F5F3EE]/15 text-[#F5F3EE] hover:border-[#C6F36B] hover:text-[#C6F36B] transition-colors">
+          <span>BACK TO TOP</span>
+          <svg class="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+        </button>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-6 text-[11px]">
+        <div class="flex items-center gap-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#C6F36B]"></span>
+          <span>2026 © ALL RIGHTS RESERVED.</span>
+        </div>
+        <div class="text-[#A5A5A5]/60 text-center sm:text-left">
+          JAIPUR, RAJASTHAN // 26.9124° N, 75.7873° E
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="p-2 border border-[#F5F3EE]/10 text-[#F5F3EE] hover:text-[#C6F36B] hover:border-[#C6F36B] transition-colors">
+            GitHub
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="p-2 border border-[#F5F3EE]/10 text-[#F5F3EE] hover:text-[#C6F36B] hover:border-[#C6F36B] transition-colors">
+            LinkedIn
+          </a>
+          <a href="mailto:hridaysharma3264@gmail.com" aria-label="Email" class="p-2 border border-[#F5F3EE]/10 text-[#F5F3EE] hover:text-[#C6F36B] hover:border-[#C6F36B] transition-colors">
+            Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll Progress Indicator
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('scrollProgress').style.width = scrolled + '%';
+
+      // Header Compression
+      const nav = document.getElementById('mainNav');
+      if (winScroll > 40) {
+        nav.classList.add('py-3', 'bg-[#171717]/85', 'backdrop-blur-md', 'border-b', 'border-[#F5F3EE]/8');
+        nav.classList.remove('py-6', 'bg-transparent');
+      } else {
+        nav.classList.remove('py-3', 'bg-[#171717]/85', 'backdrop-blur-md', 'border-b', 'border-[#F5F3EE]/8');
+        nav.classList.add('py-6', 'bg-transparent');
+      }
+    });
+
+    // Mobile Hamburger Drawer
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const menuIcon = document.getElementById('menuIcon');
+    const closeIcon = document.getElementById('closeIcon');
+
+    mobileBtn.addEventListener('click', () => {
+      const isOpen = !mobileDrawer.classList.contains('hidden');
+      if (isOpen) {
+        mobileDrawer.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      } else {
+        mobileDrawer.classList.remove('hidden');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      }
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileDrawer.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      });
+    });
+
+    // Back to top
+    document.getElementById('backToTopBtn').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Copy Email
+    document.getElementById('copyEmailBtn').addEventListener('click', () => {
+      navigator.clipboard.writeText('hridaysharma3264@gmail.com');
+      const toast = document.getElementById('copyToast');
+      toast.classList.remove('hidden');
+      setTimeout(() => toast.classList.add('hidden'), 2500);
+    });
+
+    // Contact Form Mailto Dispatch
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('formName').value;
+      const subject = encodeURIComponent(document.getElementById('formSubject').value);
+      const message = encodeURIComponent(document.getElementById('formMessage').value + '\n\nBest regards,\n' + name);
+      window.location.href = `mailto:hridaysharma3264@gmail.com?subject=${subject}&body=${message}`;
+    });
+  </script>
+</body>
+</html>
