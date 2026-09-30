@@ -1,26 +1,26 @@
 /**
  * CENTRAL SOCIAL & PROFILE CONFIGURATION
  * --------------------------------------
- * Stores all links and profile data. Connects with src/config/profile.js.
+ * Stores all links and profile data. Connects with src/config/site.js.
  */
 
-import { profile } from './config/profile.js';
+import { siteConfig } from './config/site.js';
 
-export { profile };
+export { siteConfig };
 
 export const links = {
-  name: profile.name,
-  email: profile.email,
-  github: profile.socials.github,
-  linkedin: profile.socials.linkedin,
-  resume: profile.resumeUrl,
+  name: siteConfig.name,
+  email: siteConfig.email,
+  github: siteConfig.socials.github,
+  linkedin: siteConfig.socials.linkedin,
+  resume: siteConfig.resumeUrl,
 };
 
 export const profileDetails = {
-  headingDisplay: "HRIDAY",
-  role: profile.role,
-  college: profile.college,
-  location: profile.location || "Jaipur, Rajasthan, India",
-  coordinates: profile.coordinates || "26.9124° N, 75.7873° E",
-  status: profile.status
+  headingDisplay: siteConfig.heroDisplay || "HRIDAY",
+  role: siteConfig.role,
+  college: siteConfig.college,
+  location: siteConfig.location,
+  coordinates: siteConfig.coordinates,
+  status: siteConfig.status
 };
