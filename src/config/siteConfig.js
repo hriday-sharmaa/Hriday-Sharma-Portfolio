@@ -1,26 +1,27 @@
 /**
  * CENTRALIZED PORTFOLIO CONFIGURATION
  * -----------------------------------
- * Single source of truth for all personal details, socials, links, and profile metadata.
- * Update your information here to instantly propagate changes across the entire website.
+ * Connects with src/config.js (links).
  */
 
+import { links, profileDetails } from '../config.js';
+
 export const siteConfig = {
-  name: "Hriday Sharma",
-  displayHeading: "HRIDAY",
+  name: links.name || "Hriday Sharma",
+  displayHeading: profileDetails?.headingDisplay || "HRIDAY",
   monogram: "HS.dev",
-  role: "Computer Science & Engineering Student",
+  role: profileDetails?.role || "1st Year B.Tech CSE Student",
   degree: "1st Year B.Tech Computer Science & Engineering",
-  university: "JECRC University, Jaipur",
-  email: "hridaysharma3264@gmail.com",
-  location: "Jaipur, Rajasthan, India",
-  coordinates: "26.9124° N, 75.7873° E",
+  university: profileDetails?.college || "JECRC University, Jaipur",
+  email: links.email || "hridaysharma3264@gmail.com",
+  location: profileDetails?.location || "Jaipur, Rajasthan, India",
+  coordinates: profileDetails?.coordinates || "26.9124° N, 75.7873° E",
   timezone: "Asia/Kolkata",
-  availabilityStatus: "🟢 Actively seeking Summer Internships & Hackathon Teams",
-  resumeUrl: "#", // Update with Google Drive / PDF link later
+  availabilityStatus: profileDetails?.status || "🟢 Available for Internships, Hackathons & Collaborations",
+  resumeUrl: links.resume || "#",
   socials: {
-    github: "https://github.com/your-username", // Placeholder to update
-    linkedin: "https://linkedin.com/in/your-username", // Placeholder to update
+    github: links.github || "https://github.com/your-username",
+    linkedin: links.linkedin || "https://linkedin.com/in/your-username",
     twitter: "https://twitter.com/your-username",
     leetcode: "https://leetcode.com/your-username"
   },
