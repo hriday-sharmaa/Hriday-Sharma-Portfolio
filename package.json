@@ -1,7 +1,7 @@
 {
   "name": "hriday-sharma-portfolio",
   "version": "1.0.0",
-  "description": "Production-ready personal developer portfolio for Hriday Sharma [HS.dev], 1st Year B.Tech CSE Undergrad at JECRC University, Jaipur",
+  "description": "Production-ready personal developer portfolio for Hriday Sharma [Hriday Sharma], 1st Year B.Tech CSE Undergrad at JECRC University, Jaipur",
   "author": "Hriday Sharma <hridaysharma3264@gmail.com>",
   "license": "MIT",
   "type": "module",
@@ -13,7 +13,7 @@
   "keywords": [
     "portfolio",
     "hriday-sharma",
-    "hs-dev",
+    "Hriday Sharma",
     "jecrc-university",
     "btech-cse",
     "developer-portfolio",

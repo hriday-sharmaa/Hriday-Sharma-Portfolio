@@ -15,7 +15,7 @@ export function initConfigLoader() {
   const roleTitle = personalInfo.headline || personalInfo.role || 'B.Tech Computer Science & Engineering (1st Year)';
   const instName = personalInfo.institution || personalInfo.university || 'JECRC University, Jaipur, Rajasthan, India';
 
-  document.title = `${personalInfo.name} [HS.dev] // ${roleTitle} @ ${instName}`;
+  document.title = `${personalInfo.name} [Hriday Sharma] // ${roleTitle} @ ${instName}`;
 
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) {
