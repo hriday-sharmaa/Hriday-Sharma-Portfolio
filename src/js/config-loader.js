@@ -1,44 +1,54 @@
 /**
  * CONFIG LOADER & DOM HYDRATOR
  * ----------------------------
- * Connects centralized profileConfig into all matching DOM elements.
+ * Connects centralized personalInfo from portfolioData.js into all matching DOM elements.
  */
 
-import { profileConfig } from '../data/config.js';
+import { personalInfo } from '../data/portfolioData.js';
 
 export function initConfigLoader() {
   // Update document title and meta description
-  if (profileConfig.meta) {
-    document.title = profileConfig.meta.title || `${profileConfig.name} | Portfolio`;
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc && profileConfig.meta.description) {
-      metaDesc.setAttribute('content', profileConfig.meta.description);
-    }
+  document.title = `${personalInfo.heroTitle} // ${personalInfo.name} — ${personalInfo.role}`;
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) {
+    metaDesc.setAttribute(
+      'content',
+      `Personal portfolio of ${personalInfo.name} — ${personalInfo.role} at ${personalInfo.university}. Exploring algorithms, modern web systems, and creative engineering.`
+    );
   }
 
   // Populate all text elements by data-profile attribute
   document.querySelectorAll('[data-profile]').forEach(el => {
     const key = el.getAttribute('data-profile');
-    if (key === 'name') el.textContent = profileConfig.name;
-    if (key === 'university') el.textContent = profileConfig.university;
-    if (key === 'degree') el.textContent = profileConfig.degree;
-    if (key === 'location') el.textContent = profileConfig.location;
-    if (key === 'email') el.textContent = profileConfig.email;
-    if (key === 'headline') el.textContent = profileConfig.headline;
-    if (key === 'status-text') el.textContent = profileConfig.status?.text || "Available for Opportunities";
+    if (key === 'name') el.textContent = personalInfo.name;
+    if (key === 'hero-title') el.textContent = personalInfo.heroTitle;
+    if (key === 'university') el.textContent = personalInfo.university;
+    if (key === 'role' || key === 'degree') el.textContent = personalInfo.role;
+    if (key === 'location') el.textContent = personalInfo.location;
+    if (key === 'coordinates') el.textContent = personalInfo.coordinates;
+    if (key === 'email') el.textContent = personalInfo.email;
+    if (key === 'status-text' || key === 'status') el.textContent = personalInfo.status;
   });
 
-  // Update dynamic links (Email, GitHub, LinkedIn)
+  // Update dynamic links (Email, GitHub, LinkedIn, Twitter, LeetCode)
   document.querySelectorAll('[data-link]').forEach(el => {
     const linkType = el.getAttribute('data-link');
     if (linkType === 'email') {
-      el.setAttribute('href', `mailto:${profileConfig.email}`);
+      el.setAttribute('href', `mailto:${personalInfo.email}`);
     } else if (linkType === 'github') {
-      el.setAttribute('href', profileConfig.socials.github);
+      el.setAttribute('href', personalInfo.socials.github);
       el.setAttribute('target', '_blank');
       el.setAttribute('rel', 'noopener noreferrer');
     } else if (linkType === 'linkedin') {
-      el.setAttribute('href', profileConfig.socials.linkedin);
+      el.setAttribute('href', personalInfo.socials.linkedin);
+      el.setAttribute('target', '_blank');
+      el.setAttribute('rel', 'noopener noreferrer');
+    } else if (linkType === 'twitter' && personalInfo.socials.twitter) {
+      el.setAttribute('href', personalInfo.socials.twitter);
+      el.setAttribute('target', '_blank');
+      el.setAttribute('rel', 'noopener noreferrer');
+    } else if (linkType === 'leetcode' && personalInfo.socials.leetcode) {
+      el.setAttribute('href', personalInfo.socials.leetcode);
       el.setAttribute('target', '_blank');
       el.setAttribute('rel', 'noopener noreferrer');
     }
@@ -56,16 +66,16 @@ function initLiveClock() {
     try {
       const now = new Date();
       const options = {
-        timeZone: profileConfig.timezone || 'Asia/Kolkata',
+        timeZone: personalInfo.timezone || 'Asia/Kolkata',
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit',
         hour12: true
       };
       const timeString = new Intl.DateTimeFormat('en-US', options).format(now);
-      clockEl.textContent = `${timeString} IST • Jaipur, IN`;
+      clockEl.textContent = `${timeString} IST • ${personalInfo.location}`;
     } catch (e) {
-      clockEl.textContent = 'Jaipur, Rajasthan, India';
+      clockEl.textContent = 'Jaipur, India';
     }
   }
 

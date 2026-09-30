@@ -1,9 +1,9 @@
 /**
  * CONTACT FORM & CLIPBOARD COPY SYSTEM
- * Hriday Sharma Portfolio
+ * Inspired by Jishnu Mondal & Elite "Design Flex" Developer Portfolios
  */
 
-import { profileConfig } from '../data/config.js';
+import { personalInfo } from '../data/portfolioData.js';
 import { sound } from './interactive-sound.js';
 
 export function showToast(message, type = 'info') {
@@ -15,12 +15,11 @@ export function showToast(message, type = 'info') {
 
   const iconSvg = type === 'success' 
     ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>`
-    : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>`;
+    : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>`;
 
   toast.innerHTML = `${iconSvg} <span>${message}</span>`;
   container.appendChild(toast);
 
-  // Trigger animation
   setTimeout(() => toast.classList.add('show'), 10);
 
   setTimeout(() => {
@@ -36,16 +35,16 @@ export function initContact() {
     copyBtn.addEventListener('click', async () => {
       sound.playClick();
       try {
-        await navigator.clipboard.writeText(profileConfig.email);
+        await navigator.clipboard.writeText(personalInfo.email);
         sound.playChime();
-        showToast(`Copied ${profileConfig.email} to clipboard!`, 'success');
+        showToast(`Copied ${personalInfo.email} to clipboard!`, 'success');
       } catch (err) {
-        showToast(`Email: ${profileConfig.email}`, 'info');
+        showToast(`Email: ${personalInfo.email}`, 'info');
       }
     });
   }
 
-  // Contact Form Submission Simulation
+  // Contact Form Submission
   const form = document.getElementById('contact-form');
   if (form) {
     form.addEventListener('submit', (e) => {
@@ -54,7 +53,6 @@ export function initContact() {
 
       const name = form.querySelector('#contact-name').value.trim();
       const email = form.querySelector('#contact-email').value.trim();
-      const subject = form.querySelector('#contact-subject').value.trim();
       const message = form.querySelector('#contact-message').value.trim();
 
       if (!name || !email || !message) {
@@ -68,7 +66,7 @@ export function initContact() {
       submitBtn.disabled = true;
       submitBtn.innerHTML = `
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="animate-spin"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle><path d="M12 2a10 10 0 0 1 10 10" stroke-opacity="1"></path></svg>
-        Sending...
+        Transmitting...
       `;
 
       setTimeout(() => {
@@ -76,7 +74,7 @@ export function initContact() {
         submitBtn.innerHTML = originalText;
         form.reset();
         sound.playChime();
-        showToast('Thank you! Your message has been sent successfully.', 'success');
+        showToast('Transmission received! Thank you for reaching out.', 'success');
       }, 1000);
     });
   }

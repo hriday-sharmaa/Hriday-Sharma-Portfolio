@@ -1,10 +1,9 @@
 /**
  * INTERACTIVE DEVELOPER CONSOLE TERMINAL
- * Hriday Sharma Portfolio
+ * Inspired by Jishnu Mondal & Elite "Design Flex" Developer Portfolios
  */
 
-import { profileConfig } from '../data/config.js';
-import { projectsData } from '../data/projects.js';
+import { personalInfo, featuredProjects } from '../data/portfolioData.js';
 import { skillsCategories } from '../data/skills.js';
 import { sound } from './interactive-sound.js';
 
@@ -19,26 +18,28 @@ export function initTerminal() {
   const commands = {
     help: () => `
 <span class="cyan">Available Commands:</span>
-  <span class="green">about</span>       - Learn more about Hriday and his journey
-  <span class="green">skills</span>      - View technical stack & competencies
-  <span class="green">projects</span>    - Browse key software engineering projects
-  <span class="green">education</span>   - Academic background @ JECRC University
-  <span class="green">contact</span>     - Get in touch directly
+  <span class="green">about</span>       - Developer persona & background
+  <span class="green">skills</span>      - Technical stack & competencies
+  <span class="green">projects</span>    - Browse key engineering systems
+  <span class="green">education</span>   - JECRC University curriculum
+  <span class="green">hackathons</span>  - Contests & community engagements
+  <span class="green">contact</span>     - Reach out via transmission
   <span class="green">socials</span>     - Links to GitHub and LinkedIn
-  <span class="green">cat hriday.json</span> - Inspect profile configuration
+  <span class="green">cat hriday.json</span> - Dump portfolio configuration
   <span class="green">date</span>        - Display Jaipur (IST) local time
   <span class="green">sudo hire-hriday</span> - Unlock hiring protocol
   <span class="green">clear</span>       - Clear the console screen
 `,
     about: () => `
-<span class="cyan">Hriday Sharma</span>
-<span class="purple">${profileConfig.role || profileConfig.degree}</span>
-<span class="muted">Institution:</span> ${profileConfig.university}, Jaipur, India
+<span class="cyan">${personalInfo.name}</span> (${personalInfo.heroTitle})
+<span class="purple">${personalInfo.role}</span>
+<span class="muted">Institution:</span> ${personalInfo.university}, India
+<span class="muted">Status:</span> ${personalInfo.status}
 
-${profileConfig.bio.join('\n\n')}
+First-year Computer Science & Engineering undergraduate at JECRC University. Focused on Data Structures & Algorithms (C++), modern web engineering, and high-performance interactive interfaces.
 `,
     skills: () => {
-      let output = '<span class="cyan">Technical Skills Matrix:</span>\n';
+      let output = '<span class="cyan">Technical Competencies:</span>\n';
       skillsCategories.forEach(cat => {
         output += `\n<span class="purple">[${cat.name}]</span>\n`;
         const items = cat.skills.map(s => `${s.name} (${s.badge})`).join(' • ');
@@ -47,39 +48,46 @@ ${profileConfig.bio.join('\n\n')}
       return output;
     },
     projects: () => {
-      let output = '<span class="cyan">Featured Engineering Projects:</span>\n';
-      projectsData.forEach(p => {
-        output += `\n<span class="green">▶ ${p.title}</span> <span class="muted">[${p.category}]</span>\n`;
-        output += `  ${p.description}\n`;
+      let output = '<span class="cyan">Featured Systems (Selected Works):</span>\n';
+      featuredProjects.forEach(p => {
+        output += `\n<span class="green">▶ ${p.num} // ${p.title}</span> <span class="muted">[${p.category}]</span>\n`;
+        output += `  ${p.summary}\n`;
         output += `  <span class="cyan">Tech:</span> ${p.tags.join(', ')}\n`;
       });
       return output;
     },
     education: () => `
-<span class="cyan">Academics & University:</span>
-  <span class="green">Degree:</span> ${profileConfig.degree}
-  <span class="green">Campus:</span> ${profileConfig.university}, Jaipur, Rajasthan, India
-  <span class="green">Status:</span> 1st Year (Batch of 2024 - 2028)
-  <span class="green">Core Focus:</span> Data Structures, Algorithms, C++, Computer Architecture & Web Systems
+<span class="cyan">Academics & Campus:</span>
+  <span class="green">Degree:</span> ${personalInfo.role}
+  <span class="green">Campus:</span> ${personalInfo.university}
+  <span class="green">Coordinates:</span> ${personalInfo.coordinates}
+  <span class="green">Batch:</span> 2024 - 2028
+  <span class="green">Core Studies:</span> DSA (C++), OOP, Discrete Math, Computer Architecture & Web Systems
+`,
+    hackathons: () => `
+<span class="cyan">Hackathons & Engineering Contests:</span>
+  • Active participant in university-level algorithmic programming contests
+  • Building collaborative prototypes for campus problem statements (CampusPulse)
+  • Ready to team up for upcoming 24h & 48h hackathons!
 `,
     contact: () => `
-<span class="cyan">Direct Contact:</span>
-  <span class="green">Email:</span> <a href="mailto:${profileConfig.email}" class="cyan">${profileConfig.email}</a>
-  <span class="green">GitHub:</span> <a href="${profileConfig.socials.github}" target="_blank" class="purple">${profileConfig.socials.github}</a>
-  <span class="green">LinkedIn:</span> <a href="${profileConfig.socials.linkedin}" target="_blank" class="purple">${profileConfig.socials.linkedin}</a>
-  <span class="green">Location:</span> ${profileConfig.location}
+<span class="cyan">Direct Transmission:</span>
+  <span class="green">Email:</span> <a href="mailto:${personalInfo.email}" class="cyan">${personalInfo.email}</a>
+  <span class="green">GitHub:</span> <a href="${personalInfo.socials.github}" target="_blank" class="purple">${personalInfo.socials.github}</a>
+  <span class="green">LinkedIn:</span> <a href="${personalInfo.socials.linkedin}" target="_blank" class="purple">${personalInfo.socials.linkedin}</a>
+  <span class="green">Location:</span> ${personalInfo.location}
 `,
     socials: () => `
 <span class="cyan">Social Media & Code Repositories:</span>
-  • GitHub: <a href="${profileConfig.socials.github}" target="_blank" class="cyan">${profileConfig.socials.github}</a>
-  • LinkedIn: <a href="${profileConfig.socials.linkedin}" target="_blank" class="cyan">${profileConfig.socials.linkedin}</a>
+  • GitHub: <a href="${personalInfo.socials.github}" target="_blank" class="cyan">${personalInfo.socials.github}</a>
+  • LinkedIn: <a href="${personalInfo.socials.linkedin}" target="_blank" class="cyan">${personalInfo.socials.linkedin}</a>
 `,
     date: () => {
       const now = new Date();
       return `<span class="amber">${now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' })} IST (Jaipur, India)</span>`;
     },
     'cat hriday.json': () => {
-      return `<span class="purple">${JSON.stringify(profileConfig, null, 2)}</span>`;
+      return `<span class="purple">${JSON.stringify(personalInfo, null, 2)}</span>`;
     },
     'sudo hire-hriday': () => `
 <span class="green">
@@ -90,8 +98,8 @@ ${profileConfig.bio.join('\n\n')}
   ███████║╚██████╔╝╚██████╗╚██████╗███████╗███████║██╗
   ╚══════╝ ╚═════╝  ╚═════╝ ╚═════╝╚══════╝╚══════╝╚═╝
 </span>
-<span class="cyan">Access granted! Hriday is actively seeking software internships and open-source collaborations.</span>
-<span class="amber">Initiating email client to ${profileConfig.email}...</span>
+<span class="cyan">Access granted! Hriday is actively seeking software internships, hackathons, and open-source projects.</span>
+<span class="amber">Initiating email client to ${personalInfo.email}...</span>
 `,
     clear: () => {
       terminalScreen.innerHTML = '';
@@ -106,7 +114,6 @@ ${profileConfig.bio.join('\n\n')}
     commandHistory.push(trimmed);
     historyIndex = commandHistory.length;
 
-    // Create entry row
     const block = document.createElement('div');
     block.className = 'terminal-output-block';
 
@@ -122,7 +129,7 @@ ${profileConfig.bio.join('\n\n')}
       result = commands[lowerCmd]();
       if (lowerCmd === 'sudo hire-hriday') {
         setTimeout(() => {
-          window.location.href = `mailto:${profileConfig.email}?subject=Internship%20Opportunity%20for%20Hriday%20Sharma`;
+          window.location.href = `mailto:${personalInfo.email}?subject=Opportunity%20for%20Hriday%20Sharma`;
         }, 1200);
       }
     } else {
@@ -172,7 +179,6 @@ ${profileConfig.bio.join('\n\n')}
     }
   });
 
-  // Handle clickable preset command badges
   document.querySelectorAll('.terminal-badge').forEach(badge => {
     badge.addEventListener('click', () => {
       const cmd = badge.getAttribute('data-cmd') || badge.textContent.trim();

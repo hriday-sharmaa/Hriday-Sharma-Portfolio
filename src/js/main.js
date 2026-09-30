@@ -1,10 +1,9 @@
 /**
  * MAIN CLIENT APPLICATION ENTRY POINT
- * Hriday Sharma Portfolio
+ * Inspired by Jishnu Mondal & Elite "Design Flex" Developer Portfolios
  */
 
-import { profileConfig } from '../data/config.js';
-import { projectsData } from '../data/projects.js';
+import { personalInfo, featuredProjects, marqueeTech } from '../data/portfolioData.js';
 import { skillsCategories } from '../data/skills.js';
 import { educationData, timelineMilestones } from '../data/education.js';
 
@@ -14,25 +13,28 @@ import { initCustomCursor } from './cursor.js';
 import { initTheme } from './theme.js';
 import { initTerminal } from './terminal.js';
 import { initProjectModal } from './project-modal.js';
-import { initContact, showToast } from './contact.js';
+import { initContact } from './contact.js';
+import { initBentoWidgets } from './bento-widgets.js';
 import { sound } from './interactive-sound.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Initialize core configuration and hydrate DOM
   initConfigLoader();
 
-  // 2. Initialize interactive canvas & themes
+  // 2. Initialize interactive canvas, cursor & themes
   initParticleCanvas();
   initTheme();
   initCustomCursor();
 
-  // 3. Initialize terminal and contact system
+  // 3. Initialize terminal, contact & bento widgets
   initTerminal();
   initProjectModal();
   initContact();
+  initBentoWidgets();
 
   // 4. Render Dynamic Content
   renderHeroTypewriter();
+  renderMarquee();
   renderProjects('all');
   renderSkills('languages');
   renderEducation();
@@ -53,11 +55,11 @@ function renderHeroTypewriter() {
   if (!typingEl) return;
 
   const roles = [
-    "1st Year B.Tech CSE Student",
-    "Data Structures & C++ Enthusiast",
-    "Modern Web & Frontend Builder",
-    "Algorithmic Problem Solver",
-    "Open-Source Explorer"
+    "1st Year B.Tech CSE Undergrad",
+    "Data Structures & C++ Solver",
+    "Creative Web & Systems Engineer",
+    "Open-Source & Hackathon Builder",
+    "JECRC University Scholar"
   ];
 
   let roleIdx = 0;
@@ -80,7 +82,7 @@ function renderHeroTypewriter() {
 
     if (!isDeleting && charIdx === current.length) {
       isDeleting = true;
-      delay = 1800; // Pause at end of text
+      delay = 1800;
     } else if (isDeleting && charIdx === 0) {
       isDeleting = false;
       roleIdx = (roleIdx + 1) % roles.length;
@@ -94,47 +96,62 @@ function renderHeroTypewriter() {
 }
 
 /* ==========================================================================
-   Project Render & Filtering
+   Marquee Tech Stack Renderer
+   ========================================================================== */
+function renderMarquee() {
+  const marqueeTrack = document.getElementById('bento-marquee-track');
+  if (!marqueeTrack) return;
+
+  // Duplicate for seamless infinite scroll
+  const items = [...marqueeTech, ...marqueeTech];
+  marqueeTrack.innerHTML = items.map(tech => `
+    <span class="marquee-chip">${tech}</span>
+  `).join('');
+}
+
+/* ==========================================================================
+   Project Render & Filtering (Design Flex 01, 02, 03, 04)
    ========================================================================== */
 function getProjectMockupSvg(id) {
   if (id === 'algoverse') {
     return `
       <svg class="mockup-art" viewBox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="360" height="200" rx="12" fill="#0b1120"/>
+        <rect width="360" height="200" rx="12" fill="#070c14"/>
         <!-- Sorting Bars -->
-        <rect x="35" y="110" width="22" height="60" rx="4" fill="#38bdf8" fill-opacity="0.8"/>
-        <rect x="65" y="70" width="22" height="100" rx="4" fill="#818cf8" fill-opacity="0.9"/>
-        <rect x="95" y="130" width="22" height="40" rx="4" fill="#38bdf8" fill-opacity="0.6"/>
-        <rect x="125" y="40" width="22" height="130" rx="4" fill="#a855f7"/>
-        <rect x="155" y="90" width="22" height="80" rx="4" fill="#38bdf8" fill-opacity="0.85"/>
-        <rect x="185" y="120" width="22" height="50" rx="4" fill="#38bdf8" fill-opacity="0.7"/>
-        <rect x="215" y="55" width="22" height="115" rx="4" fill="#c084fc"/>
-        <rect x="245" y="80" width="22" height="90" rx="4" fill="#38bdf8" fill-opacity="0.9"/>
-        <rect x="275" y="140" width="22" height="30" rx="4" fill="#38bdf8" fill-opacity="0.5"/>
-        <rect x="305" y="65" width="22" height="105" rx="4" fill="#818cf8"/>
-        <!-- Overlay Graph Line -->
-        <path d="M46 110 L76 70 L106 130 L136 40 L166 90 L196 120 L226 55 L256 80 L286 140 L316 65" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="4 4"/>
-        <circle cx="136" cy="40" r="5" fill="#38bdf8"/>
-        <circle cx="226" cy="55" r="5" fill="#a855f7"/>
+        <rect x="30" y="110" width="20" height="60" rx="4" fill="#00f0ff" fill-opacity="0.8"/>
+        <rect x="58" y="70" width="20" height="100" rx="4" fill="#7000ff" fill-opacity="0.9"/>
+        <rect x="86" y="130" width="20" height="40" rx="4" fill="#00f0ff" fill-opacity="0.6"/>
+        <rect x="114" y="40" width="20" height="130" rx="4" fill="#a855f7"/>
+        <rect x="142" y="90" width="20" height="80" rx="4" fill="#00f0ff" fill-opacity="0.85"/>
+        <rect x="170" y="120" width="20" height="50" rx="4" fill="#00f0ff" fill-opacity="0.7"/>
+        <rect x="198" y="55" width="20" height="115" rx="4" fill="#d946ef"/>
+        <rect x="226" y="80" width="20" height="90" rx="4" fill="#00f0ff" fill-opacity="0.9"/>
+        <rect x="254" y="140" width="20" height="30" rx="4" fill="#00f0ff" fill-opacity="0.5"/>
+        <rect x="282" y="65" width="20" height="105" rx="4" fill="#7000ff"/>
+        <rect x="310" y="95" width="20" height="75" rx="4" fill="#00f0ff" fill-opacity="0.8"/>
+        <!-- Graph Line -->
+        <path d="M40 110 L68 70 L96 130 L124 40 L152 90 L180 120 L208 55 L236 80 L264 140 L292 65 L320 95" stroke="#00f0ff" stroke-width="2.5" stroke-dasharray="4 4"/>
+        <circle cx="124" cy="40" r="5" fill="#00f0ff"/>
+        <circle cx="208" cy="55" r="5" fill="#a855f7"/>
       </svg>
     `;
   } else if (id === 'campuspulse') {
     return `
       <svg class="mockup-art" viewBox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="360" height="200" rx="12" fill="#0f172a"/>
+        <rect width="360" height="200" rx="12" fill="#0c101c"/>
         <!-- Attendance Gauge Ring -->
         <circle cx="100" cy="100" r="55" stroke="rgba(255,255,255,0.08)" stroke-width="10"/>
-        <circle cx="100" cy="100" r="55" stroke="#a855f7" stroke-width="10" stroke-dasharray="345" stroke-dashoffset="65" stroke-linecap="round"/>
-        <text x="100" y="98" fill="#f8fafc" font-size="20" font-weight="bold" text-anchor="middle" font-family="sans-serif">82%</text>
+        <circle cx="100" cy="100" r="55" stroke="#a855f7" stroke-width="10" stroke-dasharray="345" stroke-dashoffset="62" stroke-linecap="round"/>
+        <text x="100" y="98" fill="#f8fafc" font-size="20" font-weight="bold" text-anchor="middle" font-family="'Space Grotesk', sans-serif">82%</text>
         <text x="100" y="118" fill="#94a3b8" font-size="10" text-anchor="middle" font-family="sans-serif">Attendance</text>
         <!-- Schedule Cards -->
-        <rect x="180" y="45" width="145" height="42" rx="8" fill="#1e293b" stroke="rgba(255,255,255,0.06)"/>
+        <rect x="180" y="45" width="145" height="42" rx="8" fill="#141a2e" stroke="rgba(255,255,255,0.08)"/>
         <rect x="190" y="55" width="24" height="22" rx="4" fill="#a855f7" fill-opacity="0.3"/>
         <rect x="222" y="58" width="80" height="8" rx="3" fill="#cbd5e1"/>
         <rect x="222" y="70" width="50" height="6" rx="2" fill="#64748b"/>
         
-        <rect x="180" y="95" width="145" height="42" rx="8" fill="#1e293b" stroke="rgba(255,255,255,0.06)"/>
-        <rect x="190" y="105" width="24" height="22" rx="4" fill="#38bdf8" fill-opacity="0.3"/>
+        <rect x="180" y="95" width="145" height="42" rx="8" fill="#141a2e" stroke="rgba(255,255,255,0.08)"/>
+        <rect x="190" y="105" width="24" height="22" rx="4" fill="#00f0ff" fill-opacity="0.3"/>
         <rect x="222" y="108" width="70" height="8" rx="3" fill="#cbd5e1"/>
         <rect x="222" y="120" width="40" height="6" rx="2" fill="#64748b"/>
       </svg>
@@ -142,25 +159,25 @@ function getProjectMockupSvg(id) {
   } else if (id === 'devsync') {
     return `
       <svg class="mockup-art" viewBox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="360" height="200" rx="12" fill="#090d16"/>
+        <rect width="360" height="200" rx="12" fill="#060910"/>
         <!-- Window Bar -->
-        <rect x="0" y="0" width="360" height="30" fill="#131b2e"/>
+        <rect x="0" y="0" width="360" height="30" fill="#0f1524"/>
         <circle cx="20" cy="15" r="4" fill="#ef4444"/>
         <circle cx="34" cy="15" r="4" fill="#eab308"/>
         <circle cx="48" cy="15" r="4" fill="#22c55e"/>
         <!-- Code Editor Area -->
-        <text x="30" y="65" fill="#38bdf8" font-size="12" font-family="monospace">const <tspan fill="#34d399">editor</tspan> = new SandBox();</text>
-        <text x="30" y="90" fill="#a855f7" font-size="12" font-family="monospace">editor.<tspan fill="#f8fafc">render</tspan>({</text>
-        <text x="50" y="115" fill="#94a3b8" font-size="12" font-family="monospace">liveSync: <tspan fill="#38bdf8">true</tspan>,</text>
-        <text x="50" y="140" fill="#94a3b8" font-size="12" font-family="monospace">speed: <tspan fill="#fbbf24">'60fps'</tspan></text>
+        <text x="30" y="65" fill="#00f0ff" font-size="12" font-family="monospace">const <tspan fill="#10b981">sandbox</tspan> = new SandBox();</text>
+        <text x="30" y="90" fill="#a855f7" font-size="12" font-family="monospace">sandbox.<tspan fill="#f8fafc">mount</tspan>({</text>
+        <text x="50" y="115" fill="#94a3b8" font-size="12" font-family="monospace">renderSpeed: <tspan fill="#00f0ff">'60fps'</tspan>,</text>
+        <text x="50" y="140" fill="#94a3b8" font-size="12" font-family="monospace">isolation: <tspan fill="#fbbf24">true</tspan></text>
         <text x="30" y="165" fill="#a855f7" font-size="12" font-family="monospace">});</text>
-        <rect x="180" y="153" width="8" height="15" fill="#38bdf8" opacity="0.8"/>
+        <rect x="180" y="153" width="8" height="15" fill="#00f0ff" opacity="0.8"/>
       </svg>
     `;
   } else {
     return `
       <svg class="mockup-art" viewBox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="360" height="200" rx="12" fill="#0f172a"/>
+        <rect width="360" height="200" rx="12" fill="#0b0f1a"/>
         <circle cx="180" cy="100" r="50" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6 6"/>
         <rect x="155" y="85" width="50" height="30" rx="6" fill="#f59e0b" fill-opacity="0.2" stroke="#f59e0b" stroke-width="1.5"/>
         <circle cx="180" cy="78" r="14" stroke="#f59e0b" stroke-width="2"/>
@@ -175,25 +192,29 @@ function renderProjects(filter = 'all') {
   if (!grid) return;
 
   const filtered = filter === 'all' 
-    ? projectsData 
-    : projectsData.filter(p => p.category.toLowerCase().includes(filter.toLowerCase()));
+    ? featuredProjects 
+    : featuredProjects.filter(p => p.category.toLowerCase().includes(filter.toLowerCase()));
 
   grid.innerHTML = filtered.map(p => `
     <article class="project-card reveal-on-scroll">
+      <div class="project-header-row">
+        <span class="project-num-tag">${p.num}</span>
+        <span class="project-badge-pill">${p.badge}</span>
+      </div>
+
       <div class="project-preview">
         ${getProjectMockupSvg(p.id)}
-        <span class="project-badge-pill">${p.badge}</span>
       </div>
 
       <div class="project-body">
         <div class="project-category">${p.category}</div>
         <h3 class="project-title">${p.title}</h3>
-        <p class="project-desc">${p.description}</p>
+        <p class="project-desc">${p.summary}</p>
 
         <div class="project-metrics-row">
           ${p.metrics.map(m => `
             <div class="metric-item">
-              <div class="metric-val">${m.value}</div>
+              <div class="metric-val">${m.val}</div>
               <div class="metric-lbl">${m.label}</div>
             </div>
           `).join('')}
@@ -207,7 +228,7 @@ function renderProjects(filter = 'all') {
           <button class="btn-card-action primary" data-modal-project="${p.id}">
             Architecture & Spec
           </button>
-          <a href="${p.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn-card-action" title="View Source">
+          <a href="${p.github}" target="_blank" rel="noopener noreferrer" class="btn-card-action" title="View Code">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             Code
           </a>
@@ -258,7 +279,6 @@ function renderSkills(categoryId = 'languages') {
   setupScrollReveal();
 }
 
-// Skill Tab switcher
 document.querySelectorAll('.skill-tab-btn').forEach(tab => {
   tab.addEventListener('click', () => {
     sound.playClick();
@@ -299,7 +319,7 @@ function renderEducation() {
       </p>
 
       <div class="coursework-box">
-        <h4 class="coursework-title">Relevant Academic Coursework:</h4>
+        <h4 class="coursework-title">Key Academic Coursework:</h4>
         <div class="course-chips-wrap">
           ${uni.courses.map(c => `<span class="course-chip">${c}</span>`).join('')}
         </div>
@@ -322,7 +342,7 @@ function renderEducation() {
 }
 
 /* ==========================================================================
-   Navigation & Scroll Handlers
+   Navigation & UI Listeners
    ========================================================================== */
 function setupNavigation() {
   const header = document.querySelector('.site-header');
@@ -330,14 +350,12 @@ function setupNavigation() {
   const sections = document.querySelectorAll('section[id]');
 
   window.addEventListener('scroll', () => {
-    // Header shadow transition
     if (window.scrollY > 40) {
       header?.classList.add('scrolled');
     } else {
       header?.classList.remove('scrolled');
     }
 
-    // Active link highlighting
     let currentId = '';
     sections.forEach(sec => {
       const top = sec.offsetTop - 120;
@@ -354,7 +372,6 @@ function setupNavigation() {
     });
   });
 
-  // Mobile menu drawer
   const mobileToggle = document.getElementById('mobile-menu-toggle');
   const mobileDrawer = document.getElementById('mobile-drawer');
   if (mobileToggle && mobileDrawer) {
@@ -378,10 +395,10 @@ function setupAudioToggle() {
   function updateIcon(enabled) {
     if (enabled) {
       audioIcon.innerHTML = `<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>`;
-      audioBtn.setAttribute('title', 'Sound Effects: ON (Click to mute)');
+      audioBtn.setAttribute('title', 'Sound Effects: ON');
     } else {
       audioIcon.innerHTML = `<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line>`;
-      audioBtn.setAttribute('title', 'Sound Effects: MUTED (Click to unmute)');
+      audioBtn.setAttribute('title', 'Sound Effects: MUTED');
     }
   }
 
@@ -391,7 +408,6 @@ function setupAudioToggle() {
     audioBtn.addEventListener('click', () => {
       const newState = sound.toggle();
       updateIcon(newState);
-      showToast(newState ? 'Interactive Sound FX Enabled' : 'Sound FX Muted', 'info');
     });
   }
 }
@@ -423,9 +439,6 @@ function setupScrollReveal() {
   elements.forEach(el => observer.observe(el));
 }
 
-/* ==========================================================================
-   Resume Modal & Viewer
-   ========================================================================== */
 function setupResumeModal() {
   const modal = document.getElementById('resume-modal');
   const openBtns = document.querySelectorAll('[data-open-resume]');
