@@ -3,7 +3,7 @@
  * Inspired by Jishnu Mondal & Elite "Design Flex" Developer Portfolios
  */
 
-import { personalInfo, featuredProjects } from '../data/portfolioData.js';
+import { personalInfo, featuredProjects, isPlaceholderUrl } from '../data/portfolioData.js';
 import { skillsCategories } from '../data/skills.js';
 import { sound } from './interactive-sound.js';
 
@@ -70,18 +70,31 @@ First-year Computer Science & Engineering undergraduate at JECRC University. Foc
   • Building collaborative prototypes for campus problem statements (CampusPulse)
   • Ready to team up for upcoming 24h & 48h hackathons!
 `,
-    contact: () => `
+    contact: () => {
+      const gh = personalInfo.socials.github;
+      const li = personalInfo.socials.linkedin;
+      const ghNotice = isPlaceholderUrl(gh) ? ' <span class="amber">[Coming soon]</span>' : '';
+      const liNotice = isPlaceholderUrl(li) ? ' <span class="amber">[Coming soon]</span>' : '';
+      return `
 <span class="cyan">Direct Transmission:</span>
-  <span class="green">Email:</span> <a href="mailto:${personalInfo.email}" class="cyan">${personalInfo.email}</a>
-  <span class="green">GitHub:</span> <a href="${personalInfo.socials.github}" target="_blank" class="purple">${personalInfo.socials.github}</a>
-  <span class="green">LinkedIn:</span> <a href="${personalInfo.socials.linkedin}" target="_blank" class="purple">${personalInfo.socials.linkedin}</a>
+  <span class="green">Email:</span>    <a href="mailto:${personalInfo.email}" class="cyan">${personalInfo.email}</a>
+  <span class="green">GitHub:</span>   <a href="${gh}" target="_blank" class="purple">${gh}</a>${ghNotice}
+  <span class="green">LinkedIn:</span> <a href="${li}" target="_blank" class="purple">${li}</a>${liNotice}
   <span class="green">Location:</span> ${personalInfo.location}
-`,
-    socials: () => `
+`;
+    },
+    socials: () => {
+      const gh = personalInfo.socials.github;
+      const li = personalInfo.socials.linkedin;
+      const ghNotice = isPlaceholderUrl(gh) ? ' <span class="amber">[Coming soon - handle pending]</span>' : ' <span class="green">[Active]</span>';
+      const liNotice = isPlaceholderUrl(li) ? ' <span class="amber">[Coming soon - handle pending]</span>' : ' <span class="green">[Active]</span>';
+      return `
 <span class="cyan">Social Media & Code Repositories:</span>
-  • GitHub: <a href="${personalInfo.socials.github}" target="_blank" class="cyan">${personalInfo.socials.github}</a>
-  • LinkedIn: <a href="${personalInfo.socials.linkedin}" target="_blank" class="cyan">${personalInfo.socials.linkedin}</a>
-`,
+  • GitHub:   <a href="${gh}" target="_blank" class="cyan">${gh}</a>${ghNotice}
+  • LinkedIn: <a href="${li}" target="_blank" class="cyan">${li}</a>${liNotice}
+  <span class="muted">Configurable in src/data/portfolioData.js</span>
+`;
+    },
     date: () => {
       const now = new Date();
       return `<span class="amber">${now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' })} IST (Jaipur, India)</span>`;

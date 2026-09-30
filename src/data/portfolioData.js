@@ -7,6 +7,24 @@ import { siteConfig } from '../config/siteConfig.js';
 
 export { siteConfig, siteConfig as personalInfo, siteConfig as profileConfig };
 
+export const bentoTelemetry = {
+  city: "Jaipur",
+  state: "Rajasthan",
+  country: "India",
+  coordinates: siteConfig.coordinates || "26.9124° N, 75.7873° E",
+  timezone: siteConfig.timezone || "Asia/Kolkata",
+  weather: "28°C • Clear Sky",
+  systemStatus: "OPTIMAL"
+};
+
+export function isPlaceholderUrl(url) {
+  if (!url) return true;
+  return url.includes('[YOUR_USERNAME]') || 
+         url.includes('your-username') || 
+         url === '#' || 
+         url.trim() === '';
+}
+
 export const featuredProjects = [
   {
     id: "algoverse",
