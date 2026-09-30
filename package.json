@@ -1,22 +1,23 @@
 {
   "name": "hriday-sharma-portfolio",
   "version": "1.0.0",
-  "description": "High-end personal developer portfolio for Hriday Sharma, 1st Year B.Tech CSE Student at JECRC University, Jaipur",
+  "description": "Production-ready personal developer portfolio for Hriday Sharma [HS.dev], 1st Year B.Tech CSE Undergrad at JECRC University, Jaipur",
   "author": "Hriday Sharma <hridaysharma3264@gmail.com>",
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start": "python -m http.server 3000",
-    "dev": "python -m http.server 3000",
-    "serve": "python -m http.server 8080"
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "serve": "python -m http.server 8000"
   },
   "keywords": [
     "portfolio",
     "hriday-sharma",
+    "hs-dev",
     "jecrc-university",
     "btech-cse",
     "developer-portfolio",
     "data-structures",
-    "web-development"
+    "generative-ai"
   ]
 }
