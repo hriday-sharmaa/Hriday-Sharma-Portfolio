@@ -1,115 +1,156 @@
-# HRIDAY // Hriday Sharma — Developer Portfolio ⚡
+# HRIDAY // Hriday Sharma — Production Next.js 14 Developer Portfolio ⚡
 
-> **Production-ready, highly aesthetic, and distinctive personal portfolio website** designed and engineered for **Hriday Sharma**, 1st Year B.Tech Computer Science & Engineering undergraduate at **JECRC University, Jaipur, Rajasthan, India**.
+> **Production-grade, highly aesthetic personal developer portfolio** engineered for **Hriday Sharma**, 1st Year B.Tech Computer Science & Engineering undergraduate at **JECRC University, Jaipur, Rajasthan, India**. Built with Next.js 14 App Router, TypeScript, Tailwind CSS, Lucide React, and Framer Motion.
 
 ---
 
-## 🟢 Core Context & Personal Information
+## 🟢 Core Context & Profile
 
 - **Full Name:** Hriday Sharma
-- **Headline / Title:** B.Tech Computer Science & Engineering (1st Year) | Aspiring Software Engineer & AI Enthusiast
+- **Designation:** 1st Year B.Tech Computer Science & Engineering (CSE) Student
 - **Institution:** JECRC University, Jaipur, Rajasthan, India
 - **Email:** [hridaysharma3264@gmail.com](mailto:hridaysharma3264@gmail.com)
-- **Status Badge:** `🟢 1st-Year CSE @ JECRC | Open to Collaborations & Open Source`
-- **Social Links:** Configurable placeholders in centralized configuration with clean interactive icons and subtle tooltip notices ("Coming soon" or direct links when populated):
-  - **GitHub:** `https://github.com/[YOUR_USERNAME]`
-  - **LinkedIn:** `https://linkedin.com/in/[YOUR_USERNAME]`
+- **Coordinates:** `26.7753° N, 75.8763° E` (Jaipur, Rajasthan • IST UTC+5:30)
+- **Status Badge:** `🟢 1st-Year CSE @ JECRC | Open to Collaborations & Hackathons`
+- **Target Audience:** Tech recruiters, startup founders, hackathon teams, and engineering peers.
 
 ---
 
-## 🌟 Architectural & UI/UX Highlights
+## 🛠️ Technology Stack
 
-1. **Subtle Status Badge**: A glowing pill tag in the hero section displaying:
-   `🟢 1st-Year CSE @ JECRC | Open to Collaborations & Open Source` with live radar pulse indicator and smooth float micro-animation.
-2. **Monumental Typographic Hero**: Ultra-bold `HRIDAY` title with text scramble/decipher on hover, dynamic headline display, and terminal typewriter rotation.
-3. **Interactive Social Tooltip System**:
-   - Automatically detects placeholder URLs (`[YOUR_USERNAME]`, `your-username`, `#`).
-   - Renders subtle frosted-glass floating tooltip notice: `"Coming soon (Handle pending in portfolioData.js)"`.
-   - Intercepts clicks on placeholder links to display a clean toast alert instead of a broken 404 page.
-   - When configured with real usernames, seamlessly shifts to `"Visit Hriday's GitHub ↗"` and opens direct links.
-4. **The Bento Grid Experience**:
-   - **Narrative & Journey**: Core philosophy and focus areas.
-   - **JECRC Hologram ID Card**: 3D mouse perspective tilt, microchip graphics, and QR matrix.
-   - **Interactive Algorithm Sandbox**: Live in-card sorting benchmark with procedural sound feedback.
-   - **GitHub Activity Heatmap**: Interactive 64-cell commit cadence visualization.
-   - **Jaipur Telemetry & Radar Clock**: Real-time IST (UTC+5:30) clock and coordinates (`26.775352° N, 75.876276° E° N, 75.7873° E`).
-   - **Focus Beat Synthesizer**: Ambient audio player with vinyl animation and equalizer bounce.
-   - **Infinite Tech Radar Marquee**: Continuous ticker of daily tools and languages.
-5. **Interactive Developer Console (CLI)**:
-   - Built-in terminal emulator with autocompletion (<kbd>Tab</kbd>), history navigation (<kbd>↑</kbd> / <kbd>↓</kbd>), and commands:
-     `help`, `about`, `skills`, `projects`, `education`, `hackathons`, `contact`, `socials`, `cat hriday.json`, `sudo hire-hriday`, and `clear`.
-6. **Procedural Web Audio API Sound Effects**:
-   - Zero audio assets. Pure synthesized UI micro-haptics for clicks, hovers, terminal keys, and algorithm sorting, with a toggle in the navbar.
+| Layer | Technology | Details |
+|---|---|---|
+| **Framework** | **Next.js 14** | Modern App Router, Server Components & Optimized Client Bundles |
+| **Language** | **TypeScript 5** | Strict type safety across components, props, and telemetry data |
+| **Styling** | **Tailwind CSS** | Dark cyber-industrial design system, glassmorphism, glowing accents |
+| **Icons** | **Lucide React** | Clean, minimalist SVG iconography |
+| **Motion & FX** | **Framer Motion** & **Canvas** | Smooth transitions, 3D tilt perspective, Canvas Confetti |
+| **Sound Engine** | **Web Audio API** | 100% procedural synthesized micro-haptics & ambient focus chords (zero MP3 assets) |
+
+---
+
+## ✨ Architectural & Feature Highlights
+
+1. **Monumental Typographic Hero**:
+   - Ultra-bold `HRIDAY SHARMA` headline with cyan text gradient.
+   - Dynamic terminal typewriter cycling through engineering specializations.
+   - Live status badge: `🟢 1st-Year CSE @ JECRC | Open to Collaborations & Hackathons`.
+   - Direct telemetry counters: 350+ commits, 140+ DSA problems solved, JECRC '28 batch, and Jaipur coordinates.
+
+2. **Interactive Bento Matrix**:
+   - **JECRC Student Hologram ID Card**: 3D interactive mouse perspective tilt, microchip graphics, roll ID, and QR matrix.
+   - **Playable Algorithm Sandbox**: Live sorting benchmark (Bubble Sort & Selection Sort) with step-by-step swaps, comparison counter, and procedural audio pitch feedback.
+   - **GitHub Activity Matrix**: 64-day commit heatmap with activity levels, streak badge, and commit stats.
+   - **Jaipur Live Telemetry & IST Clock**: Real-time ticking 24-hour clock (UTC+5:30) with millisecond telemetry, coordinates, and weather simulation.
+   - **Focus Beat Synthesizer**: In-browser ambient audio generator with spinning vinyl disc and bouncing equalizer frequency bars.
+   - **Infinite Tech Radar Marquee**: Continuous marquee ticker displaying daily active tools and languages.
+
+3. **Featured Software Engineering Projects**:
+   - **Algoverse**: Real-time 60 FPS Algorithm & Graph Visualizer with Big-O HUD.
+   - **CampusPulse**: University utility suite featuring a 75% attendance criteria margin calculator and SGPA curve.
+   - **NeuroChat**: Multi-persona AI conversational studio with streaming token simulation.
+   - **DevSync**: Sandboxed in-browser frontend code playground with virtual dev console.
+   - **Architecture Modal**: Deep inspection of system diagrams, benchmarks, and design decisions.
+
+4. **Categorized Skills Matrix**:
+   - Languages (C/C++ with STL, Python, TypeScript, JavaScript, HTML5/CSS3).
+   - Web & Frameworks (Next.js 14, React 18, Tailwind CSS, Framer Motion, REST APIs).
+   - Developer Tools (Git, GitHub, Linux/Bash, VS Code, Chrome DevTools).
+   - Core Foundations (DSA, Object-Oriented Design, Discrete Math, Generative AI).
+
+5. **Academic Journey & Hackathons**:
+   - JECRC University B.Tech CSE coursework (Data Structures, OOP, Discrete Math, Computer Org).
+   - Senior Secondary Science foundation (PCM + CS).
+   - Campus hackathon drives, speed coding contests, and open-source contributions.
+
+6. **Interactive Developer CLI (Terminal)**:
+   - Full client-side Unix shell emulator with prompt `hriday@jecrc:~$`.
+   - Autocompletion (<kbd>Tab</kbd>), history navigation (<kbd>↑</kbd> / <kbd>↓</kbd>), and commands:
+     `help`, `about`, `skills`, `projects`, `education`, `stats`, `contact`, `matrix`, `sudo hire-hriday`, and `clear`.
+   - Quick one-click execution pills.
+
 7. **Printable Curriculum Vitae Modal**:
-   - Clean, standardized resume sheet view with print / save-to-PDF button.
+   - ATS-compliant, clean single-sheet resume preview with one-click print (`window.print()`) and copy text features.
+
+8. **Direct Dispatch Contact Hub**:
+   - Interactive collaboration form with topic selector (Summer Internship, Hackathon Invite, Open Source, CS Chat).
+   - One-click copy email button with feedback tooltip (`hridaysharma3264@gmail.com`).
+   - Direct `mailto:` transmission protocol.
 
 ---
 
-## ⚙️ Updating Your Social Links & Profile
+## 🚀 Getting Started
 
-You can update your handles and information in either [`src/data/portfolioData.js`](file:///c:/Users/fasttrack/OneDrive/Desktop/Hriday%20Sharma%20Portfolio/src/data/portfolioData.js), [`src/config/site.js`](file:///c:/Users/fasttrack/OneDrive/Desktop/Hriday%20Sharma%20Portfolio/src/config/site.js), or [`data.json`](file:///c:/Users/fasttrack/OneDrive/Desktop/Hriday%20Sharma%20Portfolio/data.json):
+### 1. Prerequisites
+- **Node.js** >= 18.17 (Tested on Node.js v24)
+- **npm** or **pnpm** / **yarn**
 
-```javascript
-// In src/config/site.js or src/data/portfolioData.js:
-export const siteConfig = {
-  name: "Hriday Sharma",
-  headline: "B.Tech Computer Science & Engineering (1st Year) | Aspiring Software Engineer & AI Enthusiast",
-  institution: "JECRC University, Jaipur, Rajasthan, India",
-  email: "hridaysharma3264@gmail.com",
-  statusBadge: "🟢 1st-Year CSE @ JECRC | Open to Collaborations & Open Source",
-  socials: {
-    github: "https://github.com/your-actual-github-username",    // 👈 Replace [YOUR_USERNAME]
-    linkedin: "https://linkedin.com/in/your-actual-linkedin-username" // 👈 Replace [YOUR_USERNAME]
-  }
-};
+### 2. Installation
+```bash
+# Clone the repository
+git clone https://github.com/hriday-sharmaa/Hriday-Sharma-Portfolio.git
+cd "Hriday Sharma Portfolio"
+
+# Install dependencies
+npm install
 ```
 
-Once updated, the site will automatically remove the "Coming soon" notice and enable direct links with tooltip previews.
+### 3. Development Server
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### 4. Production Build
+```bash
+npm run build
+npm start
+```
 
 ---
 
-## 📁 Directory Structure
+## 📁 Project Structure
 
 ```text
-Hriday Sharma Portfolio/
-├── index.html                   # Semantic, SEO-optimized HTML5 entry point
-├── package.json                 # Project manifest & local dev server scripts
-├── data.json                    # Centralized JSON representation of profile data
-├── README.md                    # Project documentation
+├── package.json               # Dependencies and scripts (Next.js 14, React 18, Tailwind)
+├── tsconfig.json              # TypeScript configuration with @/* path aliases
+├── tailwind.config.ts         # Cybernetic design system tokens & animations
+├── postcss.config.js          # PostCSS processor configuration
+├── next.config.mjs            # Next.js production settings
 ├── src/
-│   ├── config/
-│   │   ├── site.js              # ⚡ Central site & personal configuration
-│   │   ├── profile.js           # Dedicated profile bridge
-│   │   └── siteConfig.js        # Config router
+│   ├── app/
+│   │   ├── layout.tsx         # Root layout with metadata and cyber radial glow
+│   │   ├── page.tsx           # Single-page orchestration
+│   │   └── globals.css        # Tailwind directives, glassmorphism, scrollbars
+│   ├── components/
+│   │   ├── Navbar.tsx         # Fixed glass navbar with sound toggle & resume trigger
+│   │   ├── Hero.tsx           # Monumental typography, status pill & typing subtitle
+│   │   ├── BentoGrid.tsx      # Bento grid uniting telemetry, ID card & audio
+│   │   ├── AlgoVisualizerCard.tsx # In-card live sorting benchmark
+│   │   ├── JaipurClockCard.tsx    # Live IST clock & coordinates telemetry
+│   │   ├── AudioSoundscapeCard.tsx# Procedural ambient focus soundscape
+│   │   ├── ProjectsSection.tsx    # Filterable project gallery
+│   │   ├── ProjectModal.tsx       # Architectural blueprint inspection modal
+│   │   ├── SkillsSection.tsx      # Bento skills matrix with progress meters
+│   │   ├── AcademicJourney.tsx    # JECRC coursework & hackathon roadmap
+│   │   ├── TerminalCli.tsx        # Interactive Unix CLI emulator
+│   │   ├── ResumeModal.tsx        # ATS-standard printable resume
+│   │   ├── ContactSection.tsx     # Direct dispatch form & email copy
+│   │   └── Footer.tsx             # Cyberpunk footer & back to top button
 │   ├── data/
-│   │   ├── portfolioData.js     # ⚡ Central portfolio data, projects, and helpers
-│   │   ├── projects.js          # Extended project specifications
-│   │   ├── skills.js            # Categorized skills matrix
-│   │   └── education.js         # JECRC University coursework & roadmap
-│   ├── css/
-│   │   ├── main.css             # Tokens, typography, film grain, cyber grid
-│   │   ├── components.css       # Hero, bento grid, tooltips, cards, forms, modals
-│   │   ├── animations.css       # Keyframes, pulse-ring, eq-bounce, marquee-scroll
-│   │   └── terminal.css         # Interactive CLI terminal styling
-│   └── js/
-│       ├── main.js              # Client application entry point & rendering
-│       ├── config-loader.js     # DOM hydrator, tooltip engine & live Jaipur clock
-│       ├── bento-widgets.js     # 3D tilt, algo sandbox, activity matrix, audio player
-│       ├── particle-canvas.js   # 60 FPS hero constellation canvas with physics
-│       ├── interactive-sound.js # Web Audio API procedural synthesis
-│       ├── cursor.js            # Reactive magnetic cursor follower
-│       ├── theme.js             # Dark / Light theme manager with persistence
-│       ├── terminal.js          # Terminal shell parser & commands
-│       ├── project-modal.js     # Project architecture modal
-│       └── contact.js           # Contact form & copy-to-clipboard handler
+│   │   └── portfolioData.ts   # Centralized typed portfolio & profile data
+│   ├── lib/
+│   │   ├── soundEngine.ts     # Procedural Web Audio API sound synthesizer
+│   │   └── utils.ts           # Tailwind merge & utility helpers
+│   └── types/
+│       └── portfolio.ts       # TypeScript interfaces for all data structures
 ```
 
 ---
 
-## 🚀 Running Locally
+## 👤 Author & Contact
 
-```bash
-# Using Python (Built-in)
-python -m http.server 8000
-```
-Then visit **`http://localhost:8000`** in your browser.
+**Hriday Sharma**  
+1st Year B.Tech Computer Science & Engineering Undergraduate  
+JECRC University, Jaipur, Rajasthan, India  
+Email: [hridaysharma3264@gmail.com](mailto:hridaysharma3264@gmail.com)
