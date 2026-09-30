@@ -1,29 +1,32 @@
 /**
  * CENTRALIZED PORTFOLIO CONFIGURATION
  * -----------------------------------
- * Connects with src/config.js (links).
+ * Connects with src/config/profile.js and src/config.js.
  */
 
-import { links, profileDetails } from '../config.js';
+import { profile } from './profile.js';
+import { links } from '../config.js';
+
+export { profile };
 
 export const siteConfig = {
-  name: links.name || "Hriday Sharma",
-  displayHeading: profileDetails?.headingDisplay || "HRIDAY",
+  name: profile.name || links.name || "Hriday Sharma",
+  displayHeading: "HRIDAY",
   monogram: "HS.dev",
-  role: profileDetails?.role || "1st Year B.Tech CSE Student",
-  degree: "1st Year B.Tech Computer Science & Engineering",
-  university: profileDetails?.college || "JECRC University, Jaipur",
-  email: links.email || "hridaysharma3264@gmail.com",
-  location: profileDetails?.location || "Jaipur, Rajasthan, India",
-  coordinates: profileDetails?.coordinates || "26.9124° N, 75.7873° E",
+  role: profile.role || "1st Year B.Tech Computer Science & Engineering",
+  degree: profile.role || "1st Year B.Tech Computer Science & Engineering",
+  university: profile.college || "JECRC University, Jaipur",
+  email: profile.email || links.email || "hridaysharma3264@gmail.com",
+  location: profile.location || "Jaipur, Rajasthan, India",
+  coordinates: profile.coordinates || "26.9124° N, 75.7873° E",
   timezone: "Asia/Kolkata",
-  availabilityStatus: profileDetails?.status || "🟢 Available for Internships, Hackathons & Collaborations",
-  resumeUrl: links.resume || "#",
+  availabilityStatus: profile.status || "🟢 Open for hackathons & collaborative projects",
+  resumeUrl: profile.resumeUrl || links.resume || "#",
   socials: {
-    github: links.github || "https://github.com/your-username",
-    linkedin: links.linkedin || "https://linkedin.com/in/your-username",
-    twitter: "https://twitter.com/your-username",
-    leetcode: "https://leetcode.com/your-username"
+    github: profile.socials?.github || links.github || "https://github.com/your-username",
+    linkedin: profile.socials?.linkedin || links.linkedin || "https://linkedin.com/in/your-username",
+    twitter: profile.socials?.twitter || "https://twitter.com/your-username",
+    leetcode: profile.socials?.leetcode || "https://leetcode.com/your-username"
   },
   stats: {
     year: "1st Year",
