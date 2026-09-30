@@ -32,7 +32,7 @@
    - **JECRC Hologram ID Card**: 3D mouse perspective tilt, microchip graphics, and QR matrix.
    - **Interactive Algorithm Sandbox**: Live in-card sorting benchmark with procedural sound feedback.
    - **GitHub Activity Heatmap**: Interactive 64-cell commit cadence visualization.
-   - **Jaipur Telemetry & Radar Clock**: Real-time IST (UTC+5:30) clock and coordinates (`26.9124° N, 75.7873° E`).
+   - **Jaipur Telemetry & Radar Clock**: Real-time IST (UTC+5:30) clock and coordinates (`26.775352° N, 75.876276° E° N, 75.7873° E`).
    - **Focus Beat Synthesizer**: Ambient audio player with vinyl animation and equalizer bounce.
    - **Infinite Tech Radar Marquee**: Continuous ticker of daily tools and languages.
 5. **Interactive Developer Console (CLI)**:

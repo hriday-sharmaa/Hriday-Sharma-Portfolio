@@ -20,7 +20,7 @@ export const siteConfig = {
   degree: "B.Tech Computer Science & Engineering (1st Year)",
   email: "hridaysharma3264@gmail.com",
   location: "Jaipur, Rajasthan, India",
-  coordinates: "26.9124° N, 75.7873° E",
+  coordinates: "26.775352° N, 75.876276° E° N, 75.7873° E",
   timezone: "Asia/Kolkata",
   status: "🟢 1st-Year CSE @ JECRC | Open to Collaborations & Open Source",
   statusBadge: "🟢 1st-Year CSE @ JECRC | Open to Collaborations & Open Source",

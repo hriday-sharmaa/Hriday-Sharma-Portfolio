@@ -11,7 +11,7 @@ export const bentoTelemetry = {
   city: "Jaipur",
   state: "Rajasthan",
   country: "India",
-  coordinates: siteConfig.coordinates || "26.9124° N, 75.7873° E",
+  coordinates: siteConfig.coordinates || "26.775352° N, 75.876276° E° N, 75.7873° E",
   timezone: siteConfig.timezone || "Asia/Kolkata",
   weather: "28°C • Clear Sky",
   systemStatus: "OPTIMAL"
